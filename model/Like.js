@@ -11,9 +11,9 @@ const Like = db.define("Like", {
 
 
 
-db.sync()
-.then(()=>{
-    console.log("Create Like successfully...")
-})
+// db.sync()
+// .then(()=>{
+//     console.log("Create Like successfully...")
+// })
 
 module.exports = Like

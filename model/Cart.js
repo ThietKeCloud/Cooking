@@ -12,9 +12,9 @@ const Cart = db.define("Cart", {
 
 
 
-db.sync()
- .then(()=>{
-     console.log("Create Cart successfully...")
- })
+// db.sync()
+//  .then(()=>{
+//      console.log("Create Cart successfully...")
+//  })
 
 module.exports = Cart

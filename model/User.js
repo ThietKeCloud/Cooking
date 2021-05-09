@@ -13,9 +13,9 @@ const User = db.define("User", {
 
 })
 
-db.sync()
-.then(()=>{
-    console.log("Create User successfully...")
-})
+// db.sync()
+// .then(()=>{
+//     console.log("Create User successfully...")
+// })
 
 module.exports = User

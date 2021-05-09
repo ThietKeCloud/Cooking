@@ -17,15 +17,16 @@ const Recipe = db.define("Recipe", {
     numberReviewer: sequelize.INTEGER, //sl review
     teacherID: sequelize.INTEGER,
     outlineID: sequelize.INTEGER, //id đề cương
+    categoryId: sequelize.INTEGER,
     finish : sequelize.INTEGER,
     lock: sequelize.INTEGER,
 
 })
 
 
-db.sync()
-.then(()=>{
-    console.log("Create recipe successfully...")
-})
+// db.sync()
+// .then(()=>{
+//     console.log("Create recipe successfully...")
+// })
 
 module.exports = Recipe;

@@ -12,9 +12,9 @@ const Review = db.define("Review", {
 })
 
 
-db.sync()
-.then(()=>{
-    console.log("Create Review successfully...")
-})
+// db.sync()
+// .then(()=>{
+//     console.log("Create Review successfully...")
+// })
 
 module.exports = Review
