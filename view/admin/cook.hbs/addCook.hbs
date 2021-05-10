@@ -1,0 +1,97 @@
+{{#section 'js'}}
+<script>
+	$('#frmRegister').on('submit', function (e) {
+		e.preventDefault();
+		var check = 0;
+		var check1 = 0;
+		const username = $('#name').val();
+		const email = $('#email').val();
+		const fullname = $('#fullname').val();
+		if (username.length === 0) {
+			document.getElementById("cname").innerHTML = "Please enter username!";
+			check = 1;
+		}
+		else {
+			document.getElementById("cname").innerHTML = "";
+		}
+		if (email.length === 0) {
+			document.getElementById("cemail").innerHTML = "Please enter your email!";
+			check = 1;
+		}
+		else {
+			document.getElementById("cemail").innerHTML = "";
+		}
+		if (fullname.length === 0) {
+			document.getElementById("cFullname").innerHTML = "Please enter your full name!";
+			check = 1;
+		}
+		else {
+			document.getElementById("cFullname").innerHTML = "";
+		}
+
+		$.getJSON(`/is-available?user=${username}`, function (data) {
+			if (data === true) {
+				$('#frmRegister').off('submit').submit();
+			} else if (data === false) {
+				document.getElementById("cname").innerHTML = "Username already exist. Please change!";
+			}
+		});
+		
+	});
+
+</script>
+{{/section}}
+<section class="login_box_area section-margin">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="login_box_img">
+					<div class="hover">
+						 <div class="card-body text-center">
+                            <div class="icon-wrapper">
+                                <div class="icon">
+                                    <a href="#" class="linkDash">
+                                        <img alt src="/img/admin/add-user.png" style="height: 400px; width 200px; margin-top: 40px;" />
+                                        <span style="display: block;"><h2 style="color: mediumblue;margin-top: 4px;">Add Teacher</h2></span>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                        </div>
+						
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="login_form_inner register_form_inner">
+					<h3>Create Teacher Account</h3>
+					<!--================Form register =================-->
+					<form class="row login_form" action="/admin/addteacher" method="post" id="frmRegister" name="frmRegister1">
+						<div class="col-md-12 form-group">
+							<input type="text" class="form-control" id="name" name="name" placeholder="Username"
+								onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'"
+								pattern="[a-zA-Z0-9]{1,15}" title="Username includes only letters and numbers. ex: An1">
+							<span style="color: red;" id="cname"><b></b></span>
+						</div>
+						<div class="col-md-12 form-group">
+							<input type="email" class="form-control" id="email" name="email" placeholder="Email Address"
+								onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'">
+							<span style="color: red;" id="cemail"><b></b></span>
+						</div>
+						
+						<div class="col-md-12 form-group">
+							<input type="text" class="form-control" id="fullname" name="fullname"
+								placeholder="Full name" onfocus="this.placeholder = ''"
+								onblur="this.placeholder = 'Full name'">
+							<span style="color: red;" id="cFullname"><b></b></span>
+						</div>
+						<div class="col-md-12 form-group">
+							<button type="submit" value="submit" class="button button-register w-100">Create</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
