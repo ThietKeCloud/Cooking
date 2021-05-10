@@ -1,0 +1,211 @@
+{{#section 'css'}}
+<title>Academy-info</title>
+{{/section}}
+{{>banner}}
+<!--================Blog Area =================-->
+<section class="blog_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="blog_left_sidebar">
+                    <aside class="single_sidebar_widget search_widget list-group">
+                        <!-- /input-group -->
+                        <div class="br"></div>
+                    </aside>
+                    <aside class="single_sidebar_widget author_widget">
+                        
+                        <div style="height: 100px;"></div>
+                        <h4 style="text-align: center;">Charlie Barber</h4>
+                        <ul class="nav navbar-nav mr-auto" role="tablist">
+                            <li class="nav-item">
+                                <a href="#profile" class="list-group-item list-group-item-action active"
+                                    data-toggle="tab" id="profile-tab" role="tab" aria-controls="profile"
+                                    aria-selected="true">
+                                    Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#account" data-toggle="tab" class="list-group-item list-group-item-action"
+                                    id="account-tab" data-toggle="tab" role="tab" aria-controls="account"
+                                    aria-selected="false">Account</a>
+                            </li>
+                            
+                        </ul>
+                        <div class="br"></div>
+                    </aside>
+                </div>
+            </div>
+            <!-- List of course-->
+            <div class="col-lg-8 tab-content">
+                
+                <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="blog_right_sidebar" style="padding-bottom : 50px !important;">
+                        <div class="border-bottom">
+                            <div style="margin: 10px; padding: 10px;">
+                                <h2 class="text-center">Public Profile</h2>
+                                <h4 class="text-center ">Infomation about yourself</h4>
+                            </div>
+                        </div>
+                        <!-- Info menu {{ item }}-->
+                        <form action="" method="POST">
+                            <table class="table m-0">
+                                <tbody>
+                                    <tr>
+                                        <th>Full Name</th>
+                                        <td id="fullName" name = "fullName">Jack</td>
+                                        <!---->
+                                        <td><button type="button" onclick="onChangeName()" class="btn btn-success"
+                                                id="btnName">Change</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Email</td>
+                                        <td id="Email" name = "Email">Sp@gmail.com</td>
+                                        <td><button type="button" onclick="onChangeEmail()" class="btn btn-success"
+                                                id="btnEmail">Change</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div style="height: 30px;"></div>
+                            <button type="submit" class="btn btn-primary float-right save">Save</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="account" role="tabpanel" aria-labelledby="account-tab">
+                    <div class="blog_right_sidebar" style="padding-bottom : 50px !important;">
+                        <div class="border-bottom">
+                            <div style="margin: 10px; padding: 10px;">
+                                <h2 class="text-center">Public Profile</h2>
+                                <h4 class="text-center ">Infomation about yourself</h4>
+                            </div>
+                        </div>
+                        <!-- Info menu {{ item }}-->
+                        <form style="margin: 20px; padding: 20px;" onsubmit="checkPasswordMatch()" method="POST"
+                            id="onChangepass">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Old Password</label>
+                                <input type="password" class="form-control" id="oldpass" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">New Password</label>
+                                <input type="password" class="form-control" id="newpass" name="password">
+                                <span style="color: red;" id="newandold"><b></b></span>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirm">
+                                <span style="color: red;" id="cconfirm"><b></b></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="watchlist" role="tabpanel" aria-labelledby="watch-tab">
+                    <div class="blog_right_sidebar" style="padding-bottom : 50px !important;">
+                        <div class="border-bottom">
+                            <div style="margin: 10px; padding: 10px;">
+                                <h2 class="text-center">Watch list</h2>
+                                <h4 class="text-center ">List of course which you like</h4>
+                            </div>
+                        </div>
+                        <!-- Info menu {{ item }}-->
+                        <div class="card-group">
+                            {{#if this.empty}}
+                                <div class="alert alert-warning" role="alert">
+                                  <p></p>
+                                  <p class="mb-0">Nothing to show</p>
+                                </div>
+                            {{else}}
+                                {{#each this.watchlist}}
+                                    <div class="card">
+                                {{!-- <img src="..." class="card-img-top" alt="..."> --}}
+                                <div class="card-body">
+                                    <h5 class="card-title">{{namecourse}}</h5>
+                                    <p class="card-text">{{summary}}</p>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between">
+                                    <p class="card-text"> <button class="btn btn-success">View</button> </p>
+                                    <p class="card-text"> <button class="btn btn-danger" disabled>Buy</button> </p>
+                                </div>
+                            </div>
+                                {{/each}}
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================Infomation =================-->
+{{#section 'js'}}
+
+<script>
+    function onChangeName() {
+        $('#fullName').replaceWith('<td><input type="text" id = "name" name = "name"/></td>');
+        $('#btnName').css('display', 'none');
+    }
+    function onChangeEmail() {
+        $('#Email').replaceWith('<td><input type="email" id = "email" name = "email"/></td>');
+        $('#btnEmail').css('display', 'none');
+    }
+    $(document).ready(function () {
+        $('.save').on('click', function () {
+            alert('Please reload page to apply change');
+        })
+    })
+</script>
+<script>
+    $(document).ready(function () {
+
+
+        var readURL = function (input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('.profile-pic').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $(".file-upload").on('change', function () {
+            readURL(this);
+        });
+
+        $(".upload-button").on('click', function () {
+            $(".file-upload").click();
+        });
+    });
+</script>
+<script>
+    $('#onChangepass').on('submit', function (e) {
+        e.preventDefault();
+        const check = 1;
+        const oldpass = $('#oldpass').val();
+        const newpass = $('#newpass').val();
+        const confirm = $('#confirm').val();
+        if (oldpass === newpass) {
+            document.getElementById("newandold").innerHTML = "Old password similar to New password";
+            check = 0;
+        }
+        else {
+            document.getElementById("newandold").innerHTML = "";
+        }
+        if (newpass === confirm) {
+            document.getElementById("cconfirm").innerHTML = "";
+        }
+        else {
+            document.getElementById("cconfirm").innerHTML = "Not match password !!!";
+            check = 0;
+        }
+        
+        if (check == 1) {
+            $('#onChangepass').off('submit').submit();
+        }
+    });
+</script>
+
+{{/section}}
