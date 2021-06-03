@@ -1,0 +1,129 @@
+{{#section 'css'}}
+<title>Academy-Favorite</title>
+{{/section}}
+{{>banner}}
+<!-- Start Filter Bar -->
+<div class="filter-bar d-flex flex-wrap align-items-center">
+  <div style="height: 35px;">
+
+  </div>
+
+
+</div>
+<!-- End Filter Bar -->
+<!-- Start Best Seller -->
+<section class="lattest-product-area pb-40 category-list">
+  <div class="row">
+    {{#if check}}
+    <div class="d-flex justify-content-center m-5" style="width:100%">
+      <p class="h3" class="text-center"><b> You don't have any course which you like </b></p>
+    </div>
+    {{else}}
+    {{#each favorite}}
+    <div class="col-md-6 col-lg-4" id="item{{id}}">
+      <div class="card text-center card-product">
+        <div class="card-product__img">
+          <img class="card-img" src="{{imagepath}}" alt="">
+          <ul class="card-product__imgOverlay">
+            <li><button onclick="location.href='/courses/{{id}}'"><i class="ti-search"></i></button></li>
+            <li><button class="add-to-cart" data-id="{{id}}"><i class="ti-shopping-cart"></i></button></li>
+            <li><button class="remove-to-favorite" data-id="{{id}}"><i class="ti-heart"></i></button></li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <p>{{nametopic}}</p>
+          <h4 class="card-product__title"><a href="/courses/{{id}}">{{namecourse}}</a></h4>
+          <p class="card-product__price">${{price}}</p>
+          <p>Teacher: {{fullname}}</p>
+          <div class="review_item">
+            <div class="media">
+
+              <div class="media-body">
+
+                {{{createStar rating}}}
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    {{/each}}
+    {{/if}}
+  </div>
+</section>
+<!-- End Best Seller -->
+</div>
+</div>
+</div>
+</section>
+<!-- ================ category section end ================= -->
+
+
+
+<!-- ================ Subscribe section start ================= -->
+<section class="subscribe-position">
+  <div class="container">
+    <div class="subscribe text-center">
+      <h3 class="subscribe__title">Get Update From Anywhere</h3>
+      <p>Bearing Void gathering light light his eavening unto dont afraid</p>
+      <div id="mc_embed_signup">
+        <form target="_blank"
+          action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+          method="get" class="subscribe-form form-inline mt-5 pt-1">
+          <div class="form-group ml-sm-auto">
+            <input class="form-control mb-1" type="email" name="EMAIL" placeholder="Enter your email"
+              onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '">
+            <div class="info"></div>
+          </div>
+          <button class="button button-subscribe mr-auto mb-1" type="submit">Subscribe Now</button>
+          <div style="position: absolute; left: -5000px;">
+            <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ================ Subscribe section end ================= -->
+{{#section 'js'}}
+<script>
+  $(document).ready(() => {
+    $('.add-to-cart').on('click', addToCart);
+    $('.remove-to-favorite').on('click', removeFavorite);
+  })
+  function removeFavorite(id) {
+    var id = $(this).data('id');
+    $.ajax({
+      url: '/favorite',
+      type: 'DELETE',
+      data: { id },
+      success: function (result) {
+
+        $(`#item${id}`).remove();
+
+
+      }
+    })
+  }
+
+  function addToCart() {
+    var id = $(this).data('id');
+    console.log('id: ' + id);
+    var quantity = 1;
+    $.ajax({
+      url: '/cart',
+      type: 'POST',
+      data: { id, quantity },
+      success: function (result) {
+        $('#cart-badge').html(result.totalQuantity);
+      }
+    })
+  }
+
+
+</script>
+{{/section}}

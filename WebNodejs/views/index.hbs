@@ -1,0 +1,282 @@
+{{#section 'css'}}
+<title>Online Academy-Home</title>
+{{/section}}
+<main class="site-main">
+  <!--================ Hero banner start =================-->
+  <section class="hero-banner">
+    <div class="container">
+      <div class="row no-gutters align-items-center pt-60px">
+        <div class="col-5 d-none d-sm-block">
+          <div class="hero-banner__img">
+            <img class="img-fluid" src="/img/home/hoc.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-sm-7 col-lg-6 offset-lg-1 pl-4 pl-md-5 pl-lg-0">
+          <div class="hero-banner__content">
+            <h4>Learning is happy</h4>
+            <h1>Check out our premium courses</h1>
+            <p>"Learning is the seed of knowledge, knowledge is the seed of happiness."</p>
+            <a class="button button-hero" href="/category/allCategory">Learning Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================ Hero banner start =================-->
+  <div class="container">
+    <div class="section-intro pb-60px">
+      <p>Popular Topic in the market</p>
+      <h2>Popular <span class="section-intro__style">Topics</span></h2>
+    </div>
+    <!--================ Hero Carousel start =================-->
+    <section class="section-margin mt-0">
+      <div class="owl-carousel owl-theme hero-carousel">
+        {{#each hottopic}}
+        <div class="hero-carousel__slide">
+          
+          <img src="/img/Anhtopic/3.jpg" alt="" class="img-fluid">
+          <a href="/category/bytopic/{{categoryid}}/{{id}}" class="hero-carousel__slideOverlay">
+
+            <h3>{{nametopic}}</h3>
+
+          </a>
+        </div>
+        {{/each}}
+      </div>
+    </section>
+    <!--================ Hero Carousel end =================-->
+
+    <!-- ================ hot topic section start ================= -->
+    <section class="section-margin calc-60px">
+      <div class="container">
+        <div class="section-intro pb-60px">
+          <p>The most popular courses in week</p>
+          <h2>Popular <span class="section-intro__style">Course</span></h2>
+        </div>
+        <div class="row">
+          {{#each hotCourse}}
+          <div class="col-md-6 col-lg-4 col-xl-3">
+            <div class="card text-center card-product">
+              <div class="card-product__img">
+                <img class="card-img" src="{{thumbnailpath}}" alt="">
+                <ul class="card-product__imgOverlay">
+                  <li><button onclick="location.href='/courses/{{id}}'"><i class="ti-search"></i></button></li>
+                  <li><button class="add-to-cart" data-id="{{id}}"><i class="ti-shopping-cart"></i></button></li>
+                  <li><button class="add-to-favorite" data-id="{{id}}"><i class="ti-heart"></i></button></li>
+                </ul>
+              </div>
+              <div class="card-body">
+                <p>{{nametopic}}</p>
+                <h4 class="card-product__title"><a href="/courses/{{id}}">{{namecourse}}</a></h4>
+                <p>{{username}}</p>
+                <p class="card-product__price">${{price}}</p>
+
+                <div class="review_item">
+                  <div class="media">
+
+                    <div class="media-body">
+
+                      {{{createStar rating}}}
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </section>
+    <!-- ================ trending product section end ================= -->
+
+
+    <!-- ================ offer section start ================= -->
+    <section class="offer" id="parallax-1" data-anchor-target="#parallax-1"
+      data-300-top="background-position: 20px 30px" data-top-bottom="background-position: 0 20px">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-5">
+            <div class="offer__content text-center">
+              <h3>The hottest courses today</h3>
+
+              <p>Please come with us</p>
+              <a class="button button--active mt-3 mt-xl-4" href="/category/allCategory">Learn Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ================ offer section end ================= -->
+
+    {{!-- MOST VIEW --}}
+    <!-- ================ Best Selling item  carousel ================= -->
+    <div>
+      <section class="section-margin calc-60px">
+        <div class="container">
+          <div class="section-intro pb-60px">
+            <p>The Most View Course</p>
+            <h2>Most <span class="section-intro__style">View</span></h2>
+          </div>
+          <div class="owl-carousel owl-theme" id="bestSellerCarousel">
+            {{#each this.mostview}}
+            <div class="card text-center card-product">
+              <div class="card-product__img">
+                <img class="img-fluid" src="{{thumbnailpath}}" alt="">
+                <ul class="card-product__imgOverlay">
+                  <li><button onclick="location.href='/courses/{{id}}'"><i class="ti-search"></i></button></li>
+                  <li><button class="add-to-cart" data-id="{{id}}"><i class="ti-shopping-cart"></i></button></li>
+                  <li><button class="add-to-favorite" data-id="{{id}}"><i class="ti-heart"></i></button></li>
+                </ul>
+              </div>
+              <div class="card-body">
+                <span>Topic : {{nametopic}}</span>
+                <h4 class="card-product__title"><a href="/courses/{{id}}">{{namecourse}}</a></h4>
+                <p>{{username}}</p>
+                <span>${{price}}</span><br>
+                <div class="review_item">
+                  <div class="media">
+
+                    <div class="media-body">
+
+                      {{{createStar rating}}}
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+            {{/each}}
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- ================ Best Selling item  carousel end ================= -->
+    {{!-- Top New --}}
+    <!-- ================ Best Selling item  carousel ================= -->
+    <section class="section-margin calc-60px">
+      <div class="container">
+        <div class="section-intro pb-60px">
+          <p>The newest courses</p>
+          <h2>Top <span class="section-intro__style">New</span></h2>
+        </div>
+        <div class="owl-carousel owl-theme"  id="abc">
+          {{#if this.empty}}
+          <div class="card text-left">
+            <div class="card-body">
+              <p class="card-text">Nothing to show</p>
+            </div>
+          </div>
+          {{else}}
+          {{#each this.topnew}}
+          <div class="card text-center card-product">
+            <div class="card-product__img">
+              <img class="img-fluid" src="{{thumbnailpath}}" alt="">
+              <ul class="card-product__imgOverlay">
+
+                {{!-- <li><button><i class="ti-search"></i></button></li> --}}
+                <li><button class="add-to-cart" data-id="{{id}}"><i class="ti-shopping-cart"></i></button></li>
+
+                <li><button onclick="location.href='/courses/{{id}}'"><i class="ti-search"></i></button></li>
+                {{!-- <li><button><i class="ti-shopping-cart"></i></button></li> --}}
+
+                <li><button class="add-to-favorite" data-id="{{id}}" ><i class="ti-heart"></i></button></li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <span>Topic : {{nametopic}}</span>
+              <h4 class="card-product__title"><a href="/courses/{{id}}">{{namecourse}}</a></h4>
+              <span>{{username}}</span><br>
+              <span class="card-product__price">${{price}}</span><br>
+              {{!-- rating --}}
+              <div class="review_item">
+                  <div class="media">
+
+                    <div class="media-body">
+
+                      {{{createStar rating}}}
+                    </div>
+                  </div>
+
+                </div>
+
+            </div>
+          </div>
+          {{/each}}
+          {{/if}}
+        </div>
+      </div>
+    </section>
+    <!-- ================ Best Selling item  carousel end ================= -->
+
+
+
+    <!-- ================ Subscribe section start ================= -->
+    <section class="subscribe-position">
+      <div class="container">
+        <div class="subscribe text-center">
+          <h3 class="subscribe__title">Get Update From Anywhere</h3>
+          <p>Bearing Void gathering light light his eavening unto dont afraid</p>
+          <div id="mc_embed_signup">
+            <form target="_blank"
+              action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+              method="get" class="subscribe-form form-inline mt-5 pt-1">
+              <div class="form-group ml-sm-auto">
+                <input class="form-control mb-1" type="email" name="EMAIL" placeholder="Enter your email"
+                  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '">
+                <div class="info"></div>
+              </div>
+              <button class="button button-subscribe mr-auto mb-1" type="submit">Subscribe Now</button>
+              <div style="position: absolute; left: -5000px;">
+                <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- ================ Subscribe section end ================= -->
+
+
+
+</main>
+
+{{#section 'js'}}
+<script>
+  $(document).ready(() => {
+     $('.add-to-favorite').on('click',addToFavorite);
+    $('.add-to-cart').on('click', addToCart);
+   
+  })
+  function addToFavorite(){
+    
+    
+    var id = $(this).data('id');
+     $.ajax({
+      url: '/favorite',
+      type: 'POST',
+      data: { id},
+      success: function (result) {
+       
+      }
+    })
+    
+  }
+  function addToCart() {
+    var id = $(this).data('id');
+    console.log('id: ' + id);
+    var quantity = 1;
+    $.ajax({
+      url: '/cart',
+      type: 'POST',
+      data: { id, quantity },
+      success: function (result) {
+        $('#cart-badge').html(result.totalQuantity);
+      }
+    })
+  }
+</script>
+{{/section}}

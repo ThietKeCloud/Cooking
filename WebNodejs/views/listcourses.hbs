@@ -1,0 +1,134 @@
+{{#section 'css'}}
+<title>Academy-ListYourCourse</title>
+{{/section}}
+{{>banner}}
+<!-- Start Best Seller -->
+<section class="lattest-product-area pb-40 category-list">
+  <div class="row">
+    {{#if checkcourse}}
+    <div class="d-flex justify-content-center m-5" style="width:100%">
+              <p class="h3" class="text-center"><b> You don't have buy some course </b></p>
+            </div>
+    {{else}}
+    {{#each listcourse}}
+    {{#if finish}}
+      <div class="col-md-6 col-lg-4">
+      <div class="card text-center card-product">
+        <div class="card-product__img">
+          <img class="card-img" src="{{imagepath}}" alt="">
+          <ul class="card-product__imgOverlay">
+            <li><button onclick="location.href='/courses/{{id}}'"><i class="ti-search"></i></button></li>
+            <li><button><i class="ti-shopping-cart"></i></button></li>
+            <li><button class="add-to-favorite" data-id="{{id}}"><i class="ti-heart"></i></button></li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <p>{{nametopic}}</p>
+          <h4 class="card-product__title"><a href="/courses/{{id}}">{{namecourse}}</a></h4>
+          <p>{{username}}</p>
+          <p class="card-product__price">${{price}}</p>
+          <div class="review_item">
+            <div class="media">
+
+              <div class="media-body">
+
+                {{{createStar rating}}}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    {{else}}
+        <div class="col-md-6 col-lg-4">
+      <div class="card text-center card-product">
+        <div class="card-product__img">
+          <img class="card-img" src="{{imagepath}}" style="max-height: 250px;" alt="">
+          <ul class="card-product__imgOverlay">
+            <li><button onclick="location.href='/courses/{{id}}'"><i class="ti-search"></i></button></li>
+            <li><button><i class="ti-shopping-cart"></i></button></li>
+            <li><button class="add-to-favorite" data-id="{{id}}"><i class="ti-heart"></i></button></li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <p>{{nametopic}}</p>
+          <h4 class="card-product__title"><a href="/courses/{{id}}">{{namecourse}}</a></h4>
+          <p>{{username}}</p>
+          <p style="color:rgb(28, 240, 109);"><i class="far fa-star"></i>  Still updating <i class="far fa-star"></i></p>
+          <p class="card-product__price">${{price}}</p>
+          <div class="review_item">
+            <div class="media">
+              <div class="media-body">
+                {{{createStar rating}}}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/if}}
+    
+    {{/each}}
+    {{/if}}
+  </div>
+
+</section>
+<!-- End Best Seller -->
+
+<!-- ================ category section end ================= -->
+
+
+
+<!-- ================ Subscribe section start ================= -->
+<section class="subscribe-position">
+  <div class="container">
+    <div class="subscribe text-center">
+      <h3 class="subscribe__title">Get Update From Anywhere</h3>
+      <p>Bearing Void gathering light light his eavening unto dont afraid</p>
+      <div id="mc_embed_signup">
+        <form target="_blank"
+          action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+          method="get" class="subscribe-form form-inline mt-5 pt-1">
+          <div class="form-group ml-sm-auto">
+            <input class="form-control mb-1" type="email" name="EMAIL" placeholder="Enter your email"
+              onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '">
+            <div class="info"></div>
+          </div>
+          <button class="button button-subscribe mr-auto mb-1" type="submit">Subscribe Now</button>
+          <div style="position: absolute; left: -5000px;">
+            <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ================ Subscribe section end ================= -->
+{{#section 'js'}}
+<script>
+  $(document).ready(() => {
+    $('.add-to-favorite').on('click', addToFavorite);
+
+
+  })
+  function addToFavorite() {
+
+
+    var id = $(this).data('id');
+    $.ajax({
+      url: '/favorite',
+      type: 'POST',
+      data: { id },
+      success: function (result) {
+
+      }
+    })
+
+  }
+
+</script>
+{{/section}}

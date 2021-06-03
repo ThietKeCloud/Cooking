@@ -1,0 +1,198 @@
+{{#section 'css'}}
+<title>Post course</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/css/fileinput.min.css">
+{{/section}}
+
+{{#section 'js'}}
+<script src="https://cdn.tiny.cloud/1/gu0cbp08ls6qbmr0wkd4q8g0i3y11sh9nq2lsem2wvz2wny1/tinymce/5/tinymce.min.js"
+    referrerpolicy="origin"></script>
+<script>
+    tinymce.init({
+        selector: '#txtFullDes',
+        height: 600,
+        plugins: 'paste image link autolink lists table media',
+        menubar: false,
+        toolbar: [
+            'undo redo | bold italic underline strikethrough | numlist bullist | alignleft aligncenter alignright | forecolor backcolor | table link image media',
+        ],
+    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/js/fileinput.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/themes/fa/theme.min.js"></script>
+<script>
+    $("#input-image").fileinput({
+        theme: "fa",
+        dropZoneEnable: false,
+        allowedFileExtensions: ['png', 'jpg', 'gif'],
+    });
+
+    $("#thumbnail").fileinput({
+        theme: "fa",
+        dropZoneEnable: false,
+        allowedFileExtensions: ['png', 'jpg', 'gif'],
+    });
+    $("#input-video").fileinput({
+        theme: "fa",
+        dropZoneEnable: false,
+        allowedFileExtensions: ['mp4'],
+    });
+</script>
+<script>
+    function ValidateForm() {
+        var Name = document.frmPostCourse.namecourse.value;
+        var price = document.frmPostCourse.price.value;
+        var sale = document.frmPostCourse.sale.value;
+        if (Name === "") {
+            alert(' Please fill out your name course');
+            return false;
+        }
+        else if (price === "" ) {
+            alert('Please fill out price of course');
+            return false;
+        }
+        else if (sale === "" ) {
+            alert('Please fill out sale of course or if not , please enter 0');
+            return false;
+        }
+        else if (document.getElementById("input-image").files.length == 0) {
+            alert('Please upload image');
+            return false;
+        }
+        else if (document.getElementById("input-video").files.length == 0) {
+            alert('Please upload video');
+            return false;
+        }
+        else if (document.getElementById("thumbnail").files.length == 0) {
+            alert('Please upload thumbnail');
+            return false;
+        }
+        else
+            return true;
+    }
+</script>
+
+{{/section}}
+{{>banner}}
+<!--================Blog Area =================-->
+
+<section class="blog_area">
+    <div class="container">
+        <form class="row login_form" action="" method="POST" id="frmPostCourse" name="frmPostCourse"
+            enctype="multipart/form-data" onsubmit="return ValidateForm()">
+            <div class="card w-100">
+                <div class="card-header fw-bold text-center"><b> Editor for Post some courses </b></div>
+                <div class="card-body">
+                    <div class="col-md-12 form-group">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label for="Namecourse">Name of this courses</label>
+                                        <input type="text" class="form-control" id="namecourse" name="namecourse"
+                                            placeholder="Namecourse" onfocus="this.placeholder = ''"
+                                            onblur="this.placeholder = 'Namecourse'">
+                                        <span style="color: red;" id="cname"><b></b></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label for="Namecourse">Summary</label>
+                                        <input type="text" class="form-control" id="summary" name="summary"
+                                            placeholder="Summary" onfocus="this.placeholder = ''"
+                                            onblur="this.placeholder = 'Summary'">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label for="txtFullDes">Full Description</label>
+                        <textarea class="form-control" name="fullDes" id="txtFullDes" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label for="Namecourse">Price</label>
+                                        <input type="number" class="form-control" id="price" name="price"
+                                            placeholder="Price" onfocus="this.placeholder = ''"
+                                            onblur="this.placeholder = 'Price'">
+                                        <span style="color: red;" id="cprice"><b></b></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label for="Sale">Sale ( If have )</label>
+                                        <input type="number" class="form-control" id="sale" name="sale"
+                                            placeholder="Sale" onfocus="this.placeholder = ''"
+                                            onblur="this.placeholder = 'Sale'">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label for="inputGroupSelect01">Topic of this course</label>
+                                        <select id="topicid" name="topicid">
+                                            <option value="1" selected>CSS</option>
+                                            <option value="2">Nodejs</option>
+                                            <option value="3">Android</option>
+                                            <option value="4">IOS</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label for="inputGroupSelect01">Already Finish ?</label>
+                                        <select id="finish" name="finish">
+                                            <option value="1" selected>Finished</option>
+                                            <option value="0">Updating</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <div class="card">
+                            <div class="card-title text-center"><b> Thumbnail for course </b></div>
+                            <div class="file-loading card-body">
+                                <input id="thumbnail" name="thumbnail" type="file">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <div class="card">
+                            <div class="card-title text-center"><b> Some picture for courses </b></div>
+                            <div class="file-loading card-body">
+                                <input id="input-image" name="input-image" type="file">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <div class="card">
+                            <div class="card-title text-center"><b> Video for preview courses </b></div>
+                            <div class="file-loading card-body">
+                                <input id="input-video" name="input-video" type="file">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="col-md-12 form-group">
+                        <button type="submit" value="submit" class="button button-primary float-right">Save</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<!--================Infomation =================-->
