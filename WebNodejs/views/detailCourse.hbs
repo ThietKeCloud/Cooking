@@ -1,0 +1,385 @@
+{{#section 'css'}}
+<title>Academy-detailCourse</title>
+{{/section}}
+{{>banner}}
+<!--================Single Product Area =================-->
+
+
+
+{{#each course}}
+<div class="product_image_area">
+	<div class="container">
+		<div class="row s_product_inner">
+			<div class="col-lg-6">
+				<div class="">
+					<div class="single-prd-item">
+						<img class="img-fluid" src="{{imagepath}}" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-5 offset-lg-1">
+				<div class="s_product_text">
+					<h3>{{namecourse}}</h3>
+					<h2>${{price}}</h2>
+					<ul class="list">
+						<li><span>Topic</span>: {{nametopic}}</li>
+						<li><span>Teacher</span> : {{fullname}}</li>
+					</ul>
+
+					<p>{{summary}}</p>
+					<div class="product_count">
+						<a class="button primary-btn text-white add-to-cart" data-id="{{id}}">Add to Cart</a>
+						<a class="button button-hero" style="margin-left:40px" href="/video/{{id}}/Preview">Learning
+							Now</a>
+					</div>
+					<div class="card_area d-flex align-items-center">
+						<a class="icon_btn add-to-favorite" style="width:50px; height:50px" data-id="{{id}}"><i
+								class="far fa-heart"></i></a>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!--================End Single Product Area =================-->
+
+<!--================Product Description Area =================-->
+<section class="product_description_area">
+	<div class="container">
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+					aria-controls="contact" aria-selected="false">Instructor</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+					aria-selected="true">Description</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab"
+					aria-controls="review" aria-selected="false">Reviews</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="chapter-tab" data-toggle="tab" href="#chapter" role="tab"
+					aria-controls="chapter" aria-selected="false">List of chapter course</a>
+			</li>
+		</ul>
+		<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+				{{!-- --}}
+				<section class="blog_area single-post-area py-80px section-margin--small">
+					<div class="container">
+						<div class="row justify-content-center">
+							<div class="col-lg-8 posts-list">
+								<div class="single-post row">
+									<div class="col-lg-12">
+										<div class="feature-img">
+											<img class="img-fluid" src="/img/blog/feature-img1.jpg" alt="">
+										</div>
+									</div>
+									<div class="col-lg-3  col-md-3">
+										<div class="blog_info text-right">
+											<div class="post_tag">
+												<a href="#">Food,</a>
+												<a class="active" href="#">Technology,</a>
+												<a href="#">Politics,</a>
+												<a href="#">Lifestyle</a>
+											</div>
+											<ul class="blog_meta list">
+												<li>
+													<a href="#">Mark wiens
+														<i class="lnr lnr-user"></i>
+													</a>
+												</li>
+												<li>
+													<a href="#">12 Dec, 2017
+														<i class="lnr lnr-calendar-full"></i>
+													</a>
+												</li>
+												<li>
+													<a href="#">1.2M Views
+														<i class="lnr lnr-eye"></i>
+													</a>
+												</li>
+
+											</ul>
+											<ul class="social-links">
+												<li>
+													<a href="#">
+														<i class="fab fa-facebook-f"></i>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<i class="fab fa-twitter"></i>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<i class="fab fa-github"></i>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<i class="fab fa-behance"></i>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-lg-9 col-md-9 blog_details">
+										<h2>{{fullname}}</h2>
+
+										<p>
+											Hi!. I'm a developer with a serious love for teaching. I've spent
+											the last few years teaching people to program at 2 different immersive
+											bootcamps where I've helped hundreds of people become web developers and
+											change their lives. My graduates work at companies like Google, Salesforce,
+											and Square.
+										</p>
+
+									</div>
+									<div class="col-lg-12">
+										<div class="quotes">
+											Most recently, I led Galvanize's SF's 6 month immersive program as Lead
+											Instructor and Curriculum Director. After graduating from my class, 94% of
+											my students went on to receive full-time developer roles. I also worked at
+											Udacity as a Senior Course Developer on the web development team where I got
+											to reach thousands of students daily.
+
+											I’ve since focused my time on bringing my classroom teaching experience to
+											an online environment. In 2016 I launched my Web Developer Bootcamp course,
+											which has since gone on to become one of the best selling and top rated
+											courses on Udemy. I was also voted Udemy’s Best New Instructor of 2016.
+
+											I've spent years figuring out the "formula" to teaching technical skills in
+											a classroom environment, and I'm really excited to finally share my
+											expertise with you. I can confidently say that my online courses are without
+											a doubt the most comprehensive ones on the market.
+
+											Join me on this crazy adventure!
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</section>
+				{{!-- --}}
+
+			</div>
+
+			<div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+				{{{description}}}
+			</div>
+			<div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="row total_rate">
+							<div class="col-6">
+								<div class="box_total">
+									<h5>Overall</h5>
+									<h4>{{rating}}</h4>
+									<h6>{{reviewcount}}</h6>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="rating_list">
+									<h3>Based on {{reviewcount}} Reviews</h3>
+									{{{createStarList ../star }}}
+
+								</div>
+							</div>
+						</div>
+						<div class="review_list">
+							{{#each ../course.reviews}}
+							<div class="review_item">
+								<div class="media">
+									<div class="d-flex">
+										<img src="/img/product/review-1.png" alt="">
+									</div>
+									<div class="media-body">
+										<div class="media-body">
+											<h4>{{username}}</h4>
+											<p>{{createdAt}}</p>
+										</div>
+										{{{createStar rating}}}
+										{{!-- <i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i> --}}
+									</div>
+								</div>
+								<p>{{message}}</p>
+								{{!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+									incididunt ut labore et
+									dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+									laboris nisi ut aliquip ex ea
+									commodo</p> --}}
+							</div>
+							{{/each}}
+
+
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="review_box">
+							{{#if ../isRegistered}}
+							<h4>Add a Review</h4>
+							<p>Your Rating:</p>
+							<ul class="list" id="starList">
+								<li><a><i class="fa fa-star disable"></i></a></li>
+								<li><a><i class="fa fa-star disable"></i></a></li>
+								<li><a><i class="fa fa-star disable"></i></a></li>
+								<li><a><i class="fa fa-star disable"></i></a></li>
+								<li><a><i class="fa fa-star disable"></i></a></li>
+							</ul>
+							<p>Outstanding</p>
+							<form action="/review" class="form-contact form-review mt-3" method="POST">
+								<div class="form-group">
+									<input type="hidden" name="courseid" value="{{id}}">
+
+									<input type="hidden" name="rating" value="rating" id="rating">
+								</div>
+								<div class="form-group">
+									<textarea class="form-control different-control w-100" name="message" id="message"
+										cols="30" rows="5" placeholder="Enter Message"></textarea>
+								</div>
+								<div class="form-group text-center text-md-right mt-3">
+									<button type="submit" class="button button--active button-review">Submit
+										Now</button>
+								</div>
+							</form>
+							{{else}}
+							{{#if ../isLoggedIn}}
+							<h4>Please Register this Course to add a review! <a
+									href="/checkout?returnURL=courses/{{id}}">Click here to
+									Register</a></h4>
+							{{else}}
+							<h4>Please login to add a review! <a href="/signin?returnURL=courses/{{id}}">Click here to
+									login</a></h4>
+							{{/if}}
+
+							{{/if}}
+
+						</div>
+					</div>
+				</div>
+			</div>
+			{{/each}}
+			<div class="tab-pane fade" id="chapter" role="tabpanel" aria-labelledby="chapter-tab">
+				{{#if checkchapter}}
+				<div class="d-flex justify-content-center">
+					<p class="h5" class="text-center"><b>There is currently no chapter in this course</b></p>
+				</div>
+				{{else}}
+				<div class="card-group">
+					{{#each data}}
+					<div class="card">
+						<div class="card-header">Chapter : {{chapter}}</div>
+						<div class="card-body">
+							<p class="card-text">{{{namevideo}}}</p>
+						</div>
+					</div>
+					{{/each}}
+				</div>
+				{{/if}}
+			</div>
+		</div>
+</section>
+
+<!--================End Product Description Area =================-->
+
+<!--================ Start related Product area =================-->
+<section class="related-product-area section-margin--small mt-0">
+	<div class="container">
+		<div class="section-intro pb-60px">
+			<p>Popular Course Recently</p>
+			<h2>The Same <span class="section-intro__style">Course</span></h2>
+		</div>
+		<div class="row mt-30">
+			{{#each sameCourse}}
+			<div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
+				<div class="single-search-product-wrapper">
+					<div class="single-search-product d-flex">
+						<a href="#"><img src="{{thumbnailpath}}" alt=""></a>
+						<div class="desc">
+							<a href="/courses/{{id}}" class="title">{{namecourse}}</a>
+							<div class="price">${{price}}</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			{{/each}}
+
+
+		</div>
+	</div>
+</section>
+<!--================ end related Product area =================-->
+
+{{#section 'js'}}
+<script>
+	function checkStars() {
+		let stars = $('#starList i');
+		let rating = 0;
+		let i = 0;
+		for (i = 0; i < 5; i++) {
+			if ($(stars[i]).get(0) === this) {
+				rating = i + 1;
+				break;
+			}
+		}
+		$('#rating').val(rating);
+		for (i = 0; i < 5; i++) {
+			$(stars[i]).removeClass('disable');
+		}
+		for (i = rating; i < 5; i++) {
+			$(stars[i]).addClass('disable');
+		}
+	}
+
+	function addToCart() {
+		var id = $(this).data('id');
+		console.log('id: ' + id);
+		var quantity = 1;
+		$.ajax({
+			url: '/cart',
+			type: 'POST',
+			data: { id, quantity },
+			success: function (result) {
+				$('#cart-badge').html(result.totalQuantity);
+			}
+		})
+	}
+	$(document).ready(() => {
+		$('#starList i').on('click', checkStars),
+			$('.add-to-cart').on('click', addToCart),
+			$('.add-to-favorite').on('click', addToFavorite)
+	})
+
+	function addToFavorite() {
+
+		var id = $(this).data('id');
+		$.ajax({
+			url: '/favorite',
+			type: 'POST',
+			data: { id },
+			success: function (result) {
+
+			}
+		})
+
+	}
+</script>
+{{/section}}

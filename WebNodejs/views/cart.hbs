@@ -1,0 +1,109 @@
+{{#section 'css'}}
+<title>Academy-Cart</title>
+{{/section}}
+
+{{#section 'js'}}
+
+<script>
+    $(document).ready(() => {
+
+    })
+    function updateCart(id) {
+        removeCartItem(id);
+    }
+    function removeCartItem(id) {
+        $.ajax({
+            url: '/cart',
+            type: 'DELETE',
+            data: {id},
+            success: function (result) {
+                $('#cart-badge').html(result.totalQuantity);
+                $('#totalPrice').html('$' + result.totalPrice);
+                $(`#item${id}`).remove();
+
+
+            }
+        })
+    }
+</script>
+{{/section}}
+{{>banner}}
+<!--================Cart Area =================-->
+{{#with cart}}
+<section class="cart_area">
+    <div class="container">
+        <div class="cart_inner">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Course</th>
+                            <th scope="col">Price</th>
+                            {{!-- <th scope="col">Total</th> --}}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each items}}
+                        <tr id="item{{item.id}}">
+                            <td>
+                                <div class="media">
+                                    <div class="d-flex">
+                                        <img src="/img/cart/cart1.png" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                       <a href="/courses/{{item.id}}"><p>{{item.namecourse}}</p></a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <h5>${{item.price}}</h5>
+                            </td>
+                            <td>
+                                <button onclick='updateCart({{item.id}})'
+                                    style="border-color: aliceblue;">Remove</button>
+                            </td>
+
+                        </tr>
+
+                        {{/each}}
+
+                        <tr>
+                            {{!-- <td>
+
+                            </td> --}}
+                            {{!-- <td>
+
+                            </td> --}}
+                            <td>
+                                <h5>Subtotal</h5>
+                            </td>
+                            <td>
+                                <h5 id="totalPrice">${{totalPrice}}</h5>
+                            </td>
+                        </tr>
+
+                        <tr class="out_button_area">
+                            <td class="d-none-l">
+
+                            </td>
+                            <td class="">
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                <div class="checkout_btn_inner d-flex align-items-center">
+                                    <a class="gray_btn" href="/">Continue Shopping</a>
+                                    <a class="primary-btn ml-2" href="/buy">Pay</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+{{/with}}
+<!--================End Cart Area =================-->
