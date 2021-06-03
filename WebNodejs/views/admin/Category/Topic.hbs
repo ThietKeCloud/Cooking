@@ -1,0 +1,65 @@
+<div class="card">
+    <h5 class="card-header d-flex justify-content-between">
+        Topics       
+    </h5>
+
+    {{#if this.empty}}
+    <div class="card-body">
+        <p class="card-text">Không có dữ liệu.</p>
+    </div>
+    {{else}}
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name Topic</th>
+                    <th scope="col">&nbsp;</th>
+                    <th scope="col">&nbsp;</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                {{#each this.topic}}
+                <tr>
+                    <th scope="row">{{id}}</th>
+                    <td>{{nametopic}}</td>
+                    <td class="text-right">
+                        <a name="" id="" class="btn btn-sm btn-primary" href="/admin/topi/{{id}}" role="button"
+                            title="Edit Topic">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    {{/if}}
+    <nav style="margin-bottom: 50px;">
+        <ul class="pagination justify-content-center">
+
+            <li class="page-item {{#unless this.can_go_prev}} disabled {{/unless}}">
+                <a class="page-link" href="?page={{prev_val}}" tabindex="-1" aria-disabled="true">
+                    <i class="fa fa-backward" aria-hidden="true"></i>
+                </a>
+            </li>
+            {{#each this.page_items}}
+            {{#if this.isActive}}
+            <li class="page-item active" aria-current="page">
+                <a class="page-link" href="javascript:;">{{value}}<span class="sr-only">(current)</span></a>
+            </li>
+            {{else}}
+            <li class="page-item"><a class="page-link" href="?page={{value}}">{{value}}</a></li>
+            {{/if}}
+            {{/each}}
+            <li class="page-item{{#unless this.can_go_next}} disabled{{/unless}}">
+                <a class="page-link" href="?page={{next_value}}">
+                    <i class="fa fa-forward" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</div>

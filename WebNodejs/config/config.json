@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "0756287113",
+    "database": "Academy",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "xwxdjkafvgfrej",
+    "password": "664b77582dc976b2f4210482ed4aa7f5d177f21f2f757acc6be260fc9b69ecfd",
+    "database": "da5bk77rrunl9g",
+    "host": "ec2-18-233-83-165.compute-1.amazonaws.com",
+    "dialect": "postgres",
+    "dialectOptions":{
+      "ssl":true
+    }
+  }
+}
