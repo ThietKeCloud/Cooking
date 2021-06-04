@@ -1,0 +1,197 @@
+{{#section 'css'}}
+<title>Academy-Category</title>
+{{/section}}
+
+<!-- ================ category section start ================= -->
+<section class="section-margin--small mb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-3 col-lg-4 col-md-5">
+        {{#each lcCategories}}
+        <div class="sidebar-filter">
+          <div class="top-filter-head">{{namecategory}}</div>
+          <ul class="main-categories">
+            <li class="common-filter">
+              <form action="#">
+                <div class="btn-group-vertical w-100">
+
+                  {{#each level2}}
+                  <a href="/category/bytopic/{{categoryid}}/{{id}}"
+                    class="list-group-item list-group-item-action {{#if isActive}}active{{/if}}">
+                    {{nametopic}}
+                    {{#if counting}}
+                    <span class="badge badge-pill badge-danger float-right">{{counting}}</span>
+                    {{/if}}
+                  </a>
+                  {{/each}}
+
+
+                </div>
+              </form>
+            </li>
+          </ul>
+        </div>
+        {{/each}}
+
+      </div>
+      <div class="col-xl-9 col-lg-8 col-md-7">
+        <!-- Start Filter Bar -->
+        {{#if checksearch}}
+        <div class="filter-bar d-flex flex-wrap align-items-center">
+          <form action="/search" method="GET" id="filterTool">
+            <div class="sorting">
+              <select id="order" name="order" onchange="this.form.submit()">
+                {{#if rating}}
+                <option value="rating">Rating down</option>
+                <option>Default</option>
+                <option value="price">Price up</option>
+                {{else}}
+                {{#if price}}
+                <option value="price">Price up</option>
+                <option>Default</option>
+                <option value="rating">Rating down</option>
+                {{else}}
+                <option>Default</option>
+                <option value="rating">Rating down</option>
+                <option value="price">Price up</option>
+                {{/if}}
+                {{/if}}
+
+              </select>
+              <input class="d-none" type="text" name="searching" id="searching" value="{{this.searching}}" />
+            </div>
+          </form>
+        </div>
+        {{else}}
+        <div class="filter-bar d-flex flex-wrap align-items-center">
+          <div class="sorting" style="height: 35px;">
+          </div>
+        </div>
+        {{/if}}
+        <!-- End Filter Bar -->
+        <!-- Start Best Seller -->
+        <section class="lattest-product-area pb-40 category-list">
+          <div class="row">
+            {{#if this.empty}}
+            <div class="d-flex justify-content-center ">
+              <p class="h3" class="text-center"><b> Nothing to show ,please research with another word </b></p>
+            </div>
+            
+            {{else}}
+            {{#each this.course}}
+
+            <div class="col-md-6 col-lg-4">
+              <div class="card text-center card-product">
+                <div class="card-product__img">
+                  <img class="card-img" src="{{thumbnailpath}}" alt="">
+                  <ul class="card-product__imgOverlay">
+                    <li><button><i class="ti-search"></i></button></li>
+                    <li><button><i class="ti-shopping-cart"></i></button></li>
+                    <li><button><i class="ti-heart"></i></button></li>
+                  </ul>
+                </div>
+                <div class="card-body">
+                  {{#if hot}}
+                  <h5 style="color: red;"><i class="fas fa-star"></i> Best seller <i class="fas fa-star"></i></h5>
+                  {{/if}}
+                  {{#if new}}
+                  <p style="color: blue;"><i class="far fa-star"></i>  NEW  <i class="far fa-star"></i></p>
+                  {{/if}}
+                  
+                  <h4 class="card-product__title"><a href="/courses/{{id}}">{{namecourse}}</a></h4>
+
+
+                  <p class="card-product__price">{{sumary}}</p>
+
+                </div>
+              </div>
+            </div>
+            {{/each}}
+            
+            {{!-- <div class="col-md-6 col-lg-4">
+              <div class="card text-center card-product">
+                <div class="card-product__img">
+                  <img class="card-img" src="/img/product/product1.png" alt="">
+                  <ul class="card-product__imgOverlay">
+                    <li><button><i class="ti-search"></i></button></li>
+                    <li><button><i class="ti-shopping-cart"></i></button></li>
+                    <li><button><i class="ti-heart"></i></button></li>
+                  </ul>
+                </div>
+                <div class="card-body">
+                  <p>Accessories</p>
+                  <h4 class="card-product__title"><a href="/detailCourse">Quartz Belt Watch</a></h4>
+                  <p class="card-product__price">$150.00</p>
+                </div>
+              </div>
+            </div> --}}
+
+          </div>
+      
+          <nav>
+            <ul class="pagination justify-content-center">
+
+              <li class="page-item {{#unless this.can_go_prev}} disabled {{/unless}}">
+                <a class="page-link" href="?page={{prev_val}}" tabindex="-1" aria-disabled="true">
+                  <i class="fa fa-backward" aria-hidden="true"></i>
+                </a>
+              </li>
+              {{#each this.page_items}}
+              {{#if this.isActive}}
+              <li class="page-item active" aria-current="page">
+                <a class="page-link" href="javascript:;">{{value}}<span class="sr-only">(current)</span></a>
+              </li>
+              {{else}}
+              <li class="page-item"><a class="page-link"
+                  href="/search?searching={{../searching}}&page={{value}}">{{value}}</a></li>
+              {{/if}}
+              <p>{{searching}}</p>
+              {{/each}}
+              <li class="page-item{{#unless this.can_go_next}} disabled{{/unless}}">
+                <a class="page-link" href="/search?searching={{searching}}&page={{next_value}}">
+                  <i class="fa fa-forward" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </section>
+        <!-- End Best Seller -->
+      </div>
+      {{/if}}
+
+    </div>
+  </div>
+</section>
+<!-- ================ category section end ================= -->
+
+<!-- ================ top product area start ================= -->
+
+<!-- ================ top product area end ================= -->
+
+<!-- ================ Subscribe section start ================= -->
+<section class="subscribe-position">
+  <div class="container">
+    <div class="subscribe text-center">
+      <h3 class="subscribe__title">Get Update From Anywhere</h3>
+      <p>Bearing Void gathering light light his eavening unto dont afraid</p>
+      <div id="mc_embed_signup">
+        <form target="_blank"
+          action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+          method="get" class="subscribe-form form-inline mt-5 pt-1">
+          <div class="form-group ml-sm-auto">
+            <input class="form-control mb-1" type="email" name="EMAIL" placeholder="Enter your email"
+              onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '">
+            <div class="info"></div>
+          </div>
+          <button class="button button-subscribe mr-auto mb-1" type="submit">Subscribe Now</button>
+          <div style="position: absolute; left: -5000px;">
+            <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ================ Subscribe section end ================= -->
