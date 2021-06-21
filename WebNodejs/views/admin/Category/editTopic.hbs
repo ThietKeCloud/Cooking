@@ -1,15 +1,15 @@
 <form method="POST">
   <div class="card">
     <h5 class="card-header">
-      Category
+      Chủ đề
     </h5>
     <div class="card-body">
       <div class="form-group">
-        <label for="txtCatID">#</label>
+        <label for="txtCatID">STT</label>
         <input type="text" class="form-control" id="txtid" name="id" value="{{this.topic.id}}" readonly>
       </div>
       <div class="form-group">
-        <label for="txtCatName">Topic</label>
+        <label for="txtCatName">Tên chủ đề</label>
         <input type="text" class="form-control" id="txtnametopic" name="nametopic" value="{{this.topic.nametopic}}"
           autofocus>
       </div>
@@ -17,15 +17,15 @@
     <div class="card-footer text-muted">
       <a class="btn btn-primary" href="/admin/category" role="button">
         <i class="fa fa-backward" aria-hidden="true"></i>
-        Back to List
+        Quay lại
       </a>
       <button type="submit" class="btn btn-outline-danger" formaction="/admin/topicsdel">
         <i class="fa fa-trash-o" aria-hidden="true"></i>
-        Delete
+        Xóa
       </button>
       <button type="submit" class="btn btn-outline-success" formaction="/admin/topicspatch">
         <i class="fa fa-check" aria-hidden="true"></i>
-        Save
+        Lưu
       </button>
     </div>
   </div>

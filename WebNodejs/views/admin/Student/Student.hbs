@@ -1,12 +1,13 @@
 <div class="card">
-  <a href="/category" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-    aria-expanded="false"><button style="height: 40px;">
-      <h5>Student</h5>
-    </button></a>
+  
+      <button class="btn btn_sort dropdown-toggle" type="button" data-toggle="dropdown">Người xem
+                <span class="caret"></span></button>
+ 
   <ul class="dropdown-menu">
-    <li class="nav-item"><a class="nav-link" href="#" class="btn btn-secondary dropdown-toggle"
-        data-bs-toggle="dropdown" aria-expanded="false">Student</a></li>
-    <li class="nav-item"><a class="nav-link" href="/admin/Teacher">Teacher</a></li>
+                <li>
+                    <p class="sort_inactive">Người xem</p>
+                </li>
+                <li class="sort_active"><a href="\admin\teacher">Người chia sẻ</a></li>
   </ul>
 
   {{#if this.empty}}
@@ -35,14 +36,14 @@
           <td>{{fullname}}</td>
           {{#if lock}}
           <td class="text-right">
-            <a name="" id="" class="btn btn-sm btn-primary" href="/admin/unlockstudent?id={{id}}" role="button" title="Unlock Student">
+            <a name="" id="" class="btn btn-sm btn_unlock" href="/admin/unlockstudent?id={{id}}" role="button" title="Unlock Student">
               <i class="fas fa-lock-open"></i>
             </a>
           </td>
 
           {{else}}
           <td class="text-right">
-            <a name="" id="" class="btn btn-sm btn-primary" href="/admin/lockstudent?id={{id}}" role="button" title="Lock Student">
+            <a name="" id="" class="btn btn-sm btn_lock" href="/admin/lockstudent?id={{id}}" role="button" title="Lock Student">
               <i class="fas fa-lock"></i>
             </a>
           </td>

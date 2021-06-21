@@ -1,30 +1,30 @@
 <form method="POST" action="/admin/addtopic"  id="frmaddTopic" name="frmaddTopic">
   <div class="card">
     <h5 class="card-header">
-      New Topic
+      Thêm chủ đề mới
     </h5>
     <div class="card-body">
       <div class="form-group">
-        <label for="txtCatID">ID Category</label>
+        <label for="txtCatID">Mã loại công thức</label>
         <input type="text" class="form-control" id="txtid" name="id" value="{{this.topi}}" readonly>
       </div>
       <div class="form-group">
-        <label for="txtCatID">Category</label>
+        <label for="txtCatID">Tên loại công thức</label>
         <input type="text" class="form-control" id="txtname" name="name" value="{{this.cate}}" readonly>
       </div>
       <div class="form-group">
-        <label for="txtTopic">Topic</label>
+        <label for="txtTopic">Chủ đề</label>
         <input type="text" class="form-control" id="n" name="nametopic" autofocus>
       </div>
     </div>
     <div class="card-footer text-muted">
       <a class="btn btn-primary" href="/admin/category" role="button">
         <i class="fa fa-backward" aria-hidden="true"></i>
-        Back to List
+        Quay lại
       </a>
       <button type="submit" class="btn btn-outline-success">
         <i class="fa fa-check" aria-hidden="true"></i>
-        Save
+        Lưu
       </button>
     </div>
   </div>
