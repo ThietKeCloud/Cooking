@@ -5,7 +5,8 @@ const sequelize = require('sequelize')
 const Topic = db.define("Topic", {
     nametopic: sequelize.STRING,
     categoryid:sequelize.INTEGER,
-    counting : sequelize.INTEGER // So luong dang ky cua khoa hoc trong tuan
+    counting : sequelize.INTEGER ,// So luong dang ky cua khoa hoc trong tuan
+    image: sequelize.STRING
 })
 
 Topic.associate = function(models) {
