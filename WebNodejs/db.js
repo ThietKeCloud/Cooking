@@ -1,7 +1,7 @@
 const sequelize = require('sequelize')
 
 const db = new sequelize({
-    database: "Cooking",
+    database: "Cook",
     username: "postgres",
     password: "Hotien2107",
     host: "localhost",
