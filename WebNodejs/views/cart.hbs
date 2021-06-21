@@ -1,5 +1,5 @@
 {{#section 'css'}}
-<title>Academy-Cart</title>
+<title>Cooking</title>
 {{/section}}
 
 {{#section 'js'}}
@@ -37,8 +37,8 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Course</th>
-                            <th scope="col">Price</th>
+                            <th scope="col">Công thức</th>
+                            <th scope="col">Giá</th>
                             {{!-- <th scope="col">Total</th> --}}
                         </tr>
                     </thead>
@@ -60,7 +60,7 @@
                             </td>
                             <td>
                                 <button onclick='updateCart({{item.id}})'
-                                    style="border-color: aliceblue;">Remove</button>
+                                    style="border-color: aliceblue;">Xóa</button>
                             </td>
 
                         </tr>
@@ -75,7 +75,7 @@
 
                             </td> --}}
                             <td>
-                                <h5>Subtotal</h5>
+                                <h5>Tổng</h5>
                             </td>
                             <td>
                                 <h5 id="totalPrice">${{totalPrice}}</h5>
@@ -94,8 +94,8 @@
                             </td>
                             <td>
                                 <div class="checkout_btn_inner d-flex align-items-center">
-                                    <a class="gray_btn" href="/">Continue Shopping</a>
-                                    <a class="primary-btn ml-2" href="/buy">Pay</a>
+                                    <a class="gray_btn" href="/">Tiếp tục mua sắm</a>
+                                    <a class="primary-btn ml-2" href="/buy">Thanh toán</a>
                                 </div>
                             </td>
                         </tr>

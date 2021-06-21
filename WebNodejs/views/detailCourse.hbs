@@ -1,5 +1,5 @@
 {{#section 'css'}}
-<title>Academy-detailCourse</title>
+<title>Cooking</title>
 {{/section}}
 {{>banner}}
 <!--================Single Product Area =================-->
@@ -22,15 +22,14 @@
 					<h3>{{namecourse}}</h3>
 					<h2>${{price}}</h2>
 					<ul class="list">
-						<li><span>Topic</span>: {{nametopic}}</li>
-						<li><span>Teacher</span> : {{fullname}}</li>
+						<li><span>Loại công thức</span>: {{nametopic}}</li>
+						<li><span>Người bán</span> : {{fullname}}</li>
 					</ul>
 
 					<p>{{summary}}</p>
 					<div class="product_count">
-						<a class="button primary-btn text-white add-to-cart" data-id="{{id}}">Add to Cart</a>
-						<a class="button button-hero" style="margin-left:40px" href="/video/{{id}}/Preview">Learning
-							Now</a>
+						<a class="button primary-btn text-white add-to-cart" data-id="{{id}}">Thêm vào giỏ hàng</a>
+						<a class="button button-hero" style="margin-left:40px" href="/video/{{id}}/Preview">Mua ngay</a>
 					</div>
 					<div class="card_area d-flex align-items-center">
 						<a class="icon_btn add-to-favorite" style="width:50px; height:50px" data-id="{{id}}"><i
@@ -52,19 +51,15 @@
 		<ul class="nav nav-tabs" id="myTab" role="tablist">
 			<li class="nav-item">
 				<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
-					aria-controls="contact" aria-selected="false">Instructor</a>
+					aria-controls="contact" aria-selected="false">Giới thiệu</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-					aria-selected="true">Description</a>
+					aria-selected="true">Mô tả</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab"
-					aria-controls="review" aria-selected="false">Reviews</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" id="chapter-tab" data-toggle="tab" href="#chapter" role="tab"
-					aria-controls="chapter" aria-selected="false">List of chapter course</a>
+					aria-controls="review" aria-selected="false">Đánh giá</a>
 			</li>
 		</ul>
 		<div class="tab-content" id="myTabContent">
@@ -185,14 +180,14 @@
 						<div class="row total_rate">
 							<div class="col-6">
 								<div class="box_total">
-									<h5>Overall</h5>
+									<h5>Số lượt xem</h5>
 									<h4>{{rating}}</h4>
 									<h6>{{reviewcount}}</h6>
 								</div>
 							</div>
 							<div class="col-6">
 								<div class="rating_list">
-									<h3>Based on {{reviewcount}} Reviews</h3>
+									<h3>Đánh giá bởi {{reviewcount}} khách</h3>
 									{{{createStarList ../star }}}
 
 								</div>
@@ -233,8 +228,8 @@
 					<div class="col-lg-6">
 						<div class="review_box">
 							{{#if ../isRegistered}}
-							<h4>Add a Review</h4>
-							<p>Your Rating:</p>
+							<h4>Thêm đánh giá</h4>
+							<p>Đánh giá của bạn:</p>
 							<ul class="list" id="starList">
 								<li><a><i class="fa fa-star disable"></i></a></li>
 								<li><a><i class="fa fa-star disable"></i></a></li>
@@ -242,7 +237,7 @@
 								<li><a><i class="fa fa-star disable"></i></a></li>
 								<li><a><i class="fa fa-star disable"></i></a></li>
 							</ul>
-							<p>Outstanding</p>
+							<p>Nổi bật</p>
 							<form action="/review" class="form-contact form-review mt-3" method="POST">
 								<div class="form-group">
 									<input type="hidden" name="courseid" value="{{id}}">
@@ -254,18 +249,15 @@
 										cols="30" rows="5" placeholder="Enter Message"></textarea>
 								</div>
 								<div class="form-group text-center text-md-right mt-3">
-									<button type="submit" class="button button--active button-review">Submit
-										Now</button>
+									<button type="submit" class="button button--active button-review">Đăng</button>
 								</div>
 							</form>
 							{{else}}
 							{{#if ../isLoggedIn}}
-							<h4>Please Register this Course to add a review! <a
-									href="/checkout?returnURL=courses/{{id}}">Click here to
-									Register</a></h4>
+							<h4>Đăng ký để đánh giá! <a
+									href="/checkout?returnURL=courses/{{id}}">Đăng ký</a></h4>
 							{{else}}
-							<h4>Please login to add a review! <a href="/signin?returnURL=courses/{{id}}">Click here to
-									login</a></h4>
+							<h4>Đăng nhập để đánh giá! <a href="/signin?returnURL=courses/{{id}}">Đăng nhập</a></h4>
 							{{/if}}
 
 							{{/if}}

@@ -28,8 +28,6 @@ router.post("/", (req, res, next) => {
         req.session.cookie.maxAge = keepLoggedIn
           ? 30 * 24 * 60 * 60 * 100
           : null;
-
-        console.log('DN thanh cong');
         
         req.session.user = user;
         if(user.role === 1)

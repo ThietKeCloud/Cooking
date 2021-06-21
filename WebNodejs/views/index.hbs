@@ -1,28 +1,35 @@
-{{#section 'css'}}
-<title>Online Academy-Home</title>
+{{#section "css"}}
+  <title>Cooking</title>
 {{/section}}
-<main class="site-main">
+<main class="site-main" style="background-color: #FBF0E8;">
   <!--================ Hero banner start =================-->
   <section class="hero-banner">
     <div class="container">
       <div class="row no-gutters align-items-center pt-60px">
         <div class="col-5 d-none d-sm-block">
           <div class="hero-banner__img">
-            <img class="img-fluid" src="/img/home/hoc.jpg" alt="">
+            <img class="img-fluid" src="/img/home/background_home.png" alt="" />
           </div>
         </div>
         <div class="col-sm-7 col-lg-6 offset-lg-1 pl-4 pl-md-5 pl-lg-0">
           <div class="hero-banner__content">
-            <h4>Learning is happy</h4>
-            <h1>Check out our premium courses</h1>
-            <p>"Learning is the seed of knowledge, knowledge is the seed of happiness."</p>
-            <a class="button button-hero" href="/category/allCategory">Learning Now</a>
+            <h3>
+              Trên
+              <span style="color: #D66100;">10,000 công thức</span>
+              nấu ăn các
+              <span style="color: #D66100;">món ăn đặc sản</span>
+              ở khắp các vùng miền Việt Nam
+
+            </h3>
+            <a class="button_discover" href="/category/allCategory">Khám phá
+              ngay</a>
           </div>
         </div>
       </div>
     </div>
   </section>
   <!--================ Hero banner start =================-->
+<<<<<<< HEAD
   <div class="container">
     <div class="section-intro pb-60px">
       <p>Popular Topic in the market</p>
@@ -36,24 +43,86 @@
           
           <img src="{{image}}" alt="" class="img-fluid">
           <a href="/category/bytopic/{{categoryid}}/{{id}}" class="hero-carousel__slideOverlay">
-
-            <h3>{{nametopic}}</h3>
-
-          </a>
-        </div>
-        {{/each}}
+=======
+  <section style="background-color: #fff;">
+    <div class="container">
+      <div class="section-intro pb-60px">
+        <p>Công thức nổi bật</p>
+        <h2>Tìm kiếm <span class="section-intro__style">nhiều nhất</span></h2>
       </div>
-    </section>
-    <!--================ Hero Carousel end =================-->
+      <!--================ Hero Carousel start =================-->
+      <section class="section-margin mt-0">
+        <div class="owl-carousel owl-theme hero-carousel">
+          {{#each hottopic}}
+            <div class="hero-carousel__slide">
+>>>>>>> e075c85c21443840cc900f7bc8166be3a97cc59d
 
-    <!-- ================ hot topic section start ================= -->
-    <section class="section-margin calc-60px">
-      <div class="container">
-        <div class="section-intro pb-60px">
-          <p>The most popular courses in week</p>
-          <h2>Popular <span class="section-intro__style">Course</span></h2>
+              <img src="/img/home/recipe.jpg" alt="" class="img-recipe" />
+              <div class="hero-carousel__slideOverlay">
+                <p class="name_topic">{{nametopic}}</p>
+
+                <div class="like_and_view">
+                  <div class="like">
+                    <div class="icon_like"><i class="fas fa-heart"></i></div>
+                    <p class="like_count">1000</p>
+                  </div>
+                  <div class="view">
+                    <div class="icon_view"><i class="fas fa-eye"></i></div>
+                    <p class="view_count">1000</p>
+                  </div>
+                </div>
+                <div class="name_dish">Gà nướng muối ớt</div>
+                <div class="box_info">
+                  <div class="price">1000 vnđ</div>
+                  <a href="/category/bytopic/{{categoryid}}/{{id}}">
+                    <p>Chi tiết</p>
+                    <div class="icon_more"><i
+                        class="fas fa-angle-right"
+                      ></i></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          {{/each}}
         </div>
-        <div class="row">
+      </section>
+      <!--================ Hero Carousel end =================-->
+    </div>
+  </section>
+
+  <!-- ================ offer section start ================= -->
+  <section>
+    <div class="home_banner">
+      <div class="container">
+        <div class="text">
+          <span
+            style="color: #fff; font-style: italic; font-size: 32px; margin-bottom: -1%; display: block;"
+          >Khuyến mãi lên đến</span>
+          <span
+            style="color: #D66100; font-size: 46px; font-weight: 500; margin-bottom: -2%;  display: block;"
+          >50% giá trị món ăn</span>
+          <span style="color: #fff; font-size: 52px; font-weight: 500;">dành cho
+            bé</span>
+        </div>
+        <div class="button_sale">
+          Chi tiết khuyến mãi
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ offer section end ================= -->
+
+  <!-- ================ hot topic section start ================= -->
+  <section class="section-margin calc-60px" style="background-color: #fff;">
+    <div class="container">
+      <div class="section-intro pb-60px">
+        <p>Công thức nổi bật</p>
+        <h2>Công thức đang
+          <span class="section-intro__style">khuyến mãi</span></h2>
+      </div>
+      {{!-- <div class="row">
           {{#each hotCourse}}
           <div class="col-md-6 col-lg-4 col-xl-3">
             <div class="card text-center card-product">
@@ -85,13 +154,47 @@
             </div>
           </div>
           {{/each}}
+          
+        </div> --}}
+      <section class="section-margin mt-0">
+        <div class="owl-carousel owl-theme hero-carousel">
+          {{#each hottopic}}
+            <div class="hero-carousel__slide">
+
+              <img src="/img/home/recipe.jpg" alt="" class="img-fluid" />
+              <div class="hero-carousel__slideOverlay">
+                <p class="name_topic">{{nametopic}}</p>
+
+                <div class="like_and_view">
+                  <div class="like">
+                    <div class="icon_like"><i class="fas fa-heart"></i></div>
+                    <p class="like_count">1000</p>
+                  </div>
+                  <div class="view">
+                    <div class="icon_view"><i class="fas fa-eye"></i></div>
+                    <p class="view_count">1000</p>
+                  </div>
+                </div>
+                <div class="name_dish">Gà nướng muối ớt</div>
+                <div class="box_info">
+                  <div class="price">1000 vnđ</div>
+                  <a href="/category/bytopic/{{categoryid}}/{{id}}">
+                    <p>Chi tiết</p>
+                    <div class="icon_more"><i
+                        class="fas fa-angle-right"
+                      ></i></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          {{/each}}
         </div>
-      </div>
-    </section>
-    <!-- ================ trending product section end ================= -->
+      </section>
+    </div>
+  </section>
+  <!-- ================ trending product section end ================= -->
 
-
-    <!-- ================ offer section start ================= -->
+  {{! <!-- ================ offer section start ================= -->
     <section class="offer" id="parallax-1" data-anchor-target="#parallax-1"
       data-300-top="background-position: 20px 30px" data-top-bottom="background-position: 0 20px">
       <div class="container">
@@ -107,11 +210,11 @@
         </div>
       </div>
     </section>
-    <!-- ================ offer section end ================= -->
+    <!-- ================ offer section end ================= --> }}
 
-    {{!-- MOST VIEW --}}
-    <!-- ================ Best Selling item  carousel ================= -->
-    <div>
+  {{! MOST VIEW }}
+  <!-- ================ Best Selling item  carousel ================= -->
+  {{!-- <div>
       <section class="section-margin calc-60px">
         <div class="container">
           <div class="section-intro pb-60px">
@@ -151,46 +254,48 @@
           </div>
         </div>
       </section>
-    </div>
-    <!-- ================ Best Selling item  carousel end ================= -->
-    {{!-- Top New --}}
-    <!-- ================ Best Selling item  carousel ================= -->
-    <section class="section-margin calc-60px">
-      <div class="container">
-        <div class="section-intro pb-60px">
-          <p>The newest courses</p>
-          <h2>Top <span class="section-intro__style">New</span></h2>
-        </div>
-        <div class="owl-carousel owl-theme"  id="abc">
-          {{#if this.empty}}
+    </div> --}}
+  <!-- ================ Best Selling item  carousel end ================= -->
+  {{! Top New }}
+  {{!-- <!-- ================ Best Selling item  carousel ================= -->
+  <section class="section-margin">
+    <div class="container">
+      <div class="section-intro pb-60px">
+        <p>Blog công thức</p>
+        <h2>Tin tức <span class="section-intro__style">nổi bật</span></h2>
+      </div>
+      <div class="owl-carousel owl-theme" id="abc">
+        {{#if this.empty}}
           <div class="card text-left">
             <div class="card-body">
-              <p class="card-text">Nothing to show</p>
+              <p class="card-text">Không có công thức</p>
             </div>
           </div>
-          {{else}}
+        {{else}}
           {{#each this.topnew}}
-          <div class="card text-center card-product">
-            <div class="card-product__img">
-              <img class="img-fluid" src="{{thumbnailpath}}" alt="">
-              <ul class="card-product__imgOverlay">
+            <div class="card text-center card-product">
+              <div class="card-product__img">
+                <img class="img-fluid" src="{{thumbnailpath}}" alt="" />
+                <ul class="card-product__imgOverlay">
 
-                {{!-- <li><button><i class="ti-search"></i></button></li> --}}
-                <li><button class="add-to-cart" data-id="{{id}}"><i class="ti-shopping-cart"></i></button></li>
+                  {{! <li><button><i class="ti-search"></i></button></li> }}
+                  <li><button class="add-to-cart" data-id="{{id}}"><i class="ti-shopping-cart"></i></button></li>
 
-                <li><button onclick="location.href='/courses/{{id}}'"><i class="ti-search"></i></button></li>
-                {{!-- <li><button><i class="ti-shopping-cart"></i></button></li> --}}
+                  <li><button onclick=" location.href='/courses/{{id}}'"><i class="ti-search"></i></button></li>
+                  {{! <li><button><i class="ti-shopping-cart"></i></button></li> }}
 
-                <li><button class="add-to-favorite" data-id="{{id}}" ><i class="ti-heart"></i></button></li>
-              </ul>
-            </div>
-            <div class="card-body">
-              <span>Topic : {{nametopic}}</span>
-              <h4 class="card-product__title"><a href="/courses/{{id}}">{{namecourse}}</a></h4>
-              <span>{{username}}</span><br>
-              <span class="card-product__price">${{price}}</span><br>
-              {{!-- rating --}}
-              <div class="review_item">
+                  <li><button class="add-to-favorite" data-id="{{id}}"><i class="ti-heart"></i></button></li>
+                </ul>
+              </div>
+              <div class="card-body">
+                <span>Topic: {{nametopic}}</span>
+                <h4 class="card-product__title"><a
+                    href="/courses/{{id}}"
+                  >{{namecourse}}</a></h4>
+                <span>{{username}}</span><br />
+                <span class="card-product__price">${{price}}</span><br />
+                {{! rating }}
+                <div class="review_item">
                   <div class="media">
 
                     <div class="media-body">
@@ -201,82 +306,25 @@
 
                 </div>
 
+              </div>
             </div>
-          </div>
           {{/each}}
-          {{/if}}
-        </div>
+        {{/if}}
       </div>
-    </section>
-    <!-- ================ Best Selling item  carousel end ================= -->
-
-
-
-    <!-- ================ Subscribe section start ================= -->
-    <section class="subscribe-position">
-      <div class="container">
-        <div class="subscribe text-center">
-          <h3 class="subscribe__title">Get Update From Anywhere</h3>
-          <p>Bearing Void gathering light light his eavening unto dont afraid</p>
-          <div id="mc_embed_signup">
-            <form target="_blank"
-              action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-              method="get" class="subscribe-form form-inline mt-5 pt-1">
-              <div class="form-group ml-sm-auto">
-                <input class="form-control mb-1" type="email" name="EMAIL" placeholder="Enter your email"
-                  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '">
-                <div class="info"></div>
-              </div>
-              <button class="button button-subscribe mr-auto mb-1" type="submit">Subscribe Now</button>
-              <div style="position: absolute; left: -5000px;">
-                <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-              </div>
-
-            </form>
-          </div>
-
-        </div>
-      </div>
-    </section>
-    <!-- ================ Subscribe section end ================= -->
-
-
+    </div>
+  </section>
+  <!-- ================ Best Selling item  carousel end ================= --> --}}
 
 </main>
 
-{{#section 'js'}}
-<script>
-  $(document).ready(() => {
-     $('.add-to-favorite').on('click',addToFavorite);
-    $('.add-to-cart').on('click', addToCart);
-   
-  })
-  function addToFavorite(){
-    
-    
-    var id = $(this).data('id');
-     $.ajax({
-      url: '/favorite',
-      type: 'POST',
-      data: { id},
-      success: function (result) {
-       
-      }
-    })
-    
-  }
-  function addToCart() {
-    var id = $(this).data('id');
-    console.log('id: ' + id);
-    var quantity = 1;
-    $.ajax({
-      url: '/cart',
-      type: 'POST',
-      data: { id, quantity },
-      success: function (result) {
-        $('#cart-badge').html(result.totalQuantity);
-      }
-    })
-  }
-</script>
+{{#section "js"}}
+  <script>
+    $(document).ready(() => { $('.add-to-favorite').on('click',addToFavorite);
+    $('.add-to-cart').on('click', addToCart); }) function addToFavorite(){ var
+    id = $(this).data('id'); $.ajax({ url: '/favorite', type: 'POST', data: {
+    id}, success: function (result) { } }) } function addToCart() { var id =
+    $(this).data('id'); console.log('id: ' + id); var quantity = 1; $.ajax({
+    url: '/cart', type: 'POST', data: { id, quantity }, success: function
+    (result) { $('#cart-badge').html(result.totalQuantity); } }) }
+  </script>
 {{/section}}
