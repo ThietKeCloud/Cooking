@@ -114,28 +114,29 @@
             <div class="hero-carousel__slide">
 
               <img src={{imagepath}} alt="" class="img-recipe" />
+              <div class="content_recipe">
+                <p class="name_topic">{{nametopic}}</p>
 
-              <p class="name_topic">{{nametopic}}</p>
-
-              <div class="like_and_view">
-                <div class="like">
-                  <div class="icon_like"><i class="fas fa-heart"></i></div>
-                  <p class="like_count">{{rating}}</p>
+                <div class="like_and_view">
+                  <div class="like">
+                    <div class="icon_like"><i class="fas fa-heart"></i></div>
+                    <p class="like_count">{{rating}}</p>
+                  </div>
+                  <div class="view">
+                    <div class="icon_view"><i class="fas fa-eye"></i></div>
+                    <p class="view_count">{{view}}</p>
+                  </div>
                 </div>
-                <div class="view">
-                  <div class="icon_view"><i class="fas fa-eye"></i></div>
-                  <p class="view_count">{{view}}</p>
+                <div class="name_dish">{{namecourse}}</div>
+                <div class="box_info">
+                  <div class="price">{{price}}.000 vnđ</div>
+                  <a href="/courses/{{id}}">
+                    <p>Chi tiết</p>
+                    <div class="icon_more"><i
+                        class="fas fa-angle-right"
+                      ></i></div>
+                  </a>
                 </div>
-              </div>
-              <div class="name_dish">{{namecourse}}</div>
-              <div class="box_info">
-                <div class="price">{{price}}.000 vnđ</div>
-                <a href="/category/bytopic/{{categoryid}}/{{id}}">
-                  <p>Chi tiết</p>
-                  <div class="icon_more"><i
-                      class="fas fa-angle-right"
-                    ></i></div>
-                </a>
               </div>
 
             </div>
