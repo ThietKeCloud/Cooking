@@ -13,10 +13,9 @@ router.get('/', (req, res) => {
                     .then(hotcourse => {
                         courseController.Hottopic()
                             .then(hottopic => {
-                                // console.log(topnew);
+                                //console.log(topnew);
                                 video.up();
-                                res.render('index',
-                                    {
+                                res.render('index', {
                                         topnew: topnew[0],
                                         mostview: mostview[0],
                                         hotCourse: hotcourse[0],

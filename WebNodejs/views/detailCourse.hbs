@@ -20,7 +20,7 @@
 			<div class="col-lg-5 offset-lg-1">
 				<div class="s_product_text">
 					<h3>{{namecourse}}</h3>
-					<h2>${{price}}</h2>
+					<h2><span style="font-size: 14px; color: #777 !important; font-weight: 100;">Giá:</span> {{price}}.000 VNĐ</h2>
 					<ul class="list">
 						<li><span>Loại công thức</span>: {{nametopic}}</li>
 						<li><span>Người bán</span> : {{fullname}}</li>
@@ -294,8 +294,7 @@
 <section class="related-product-area section-margin--small mt-0">
 	<div class="container">
 		<div class="section-intro pb-60px">
-			<p>Popular Course Recently</p>
-			<h2>The Same <span class="section-intro__style">Course</span></h2>
+			<h2>Món ăn <span class="section-intro__style">tương tự</span></h2>
 		</div>
 		<div class="row mt-30">
 			{{#each sameCourse}}
@@ -305,7 +304,7 @@
 						<a href="#"><img src="{{thumbnailpath}}" alt=""></a>
 						<div class="desc">
 							<a href="/courses/{{id}}" class="title">{{namecourse}}</a>
-							<div class="price">${{price}}</div>
+							<div class="price">{{price}}.000 VNĐ</div>
 						</div>
 					</div>
 

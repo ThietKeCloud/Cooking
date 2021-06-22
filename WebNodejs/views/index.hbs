@@ -1,7 +1,7 @@
 {{#section "css"}}
   <title>Cooking</title>
 {{/section}}
-<main class="site-main" style="background-color: #FBF0E8;">
+<main class="site-main">
   <!--================ Hero banner start =================-->
   <section class="hero-banner">
     <div class="container">
@@ -30,49 +30,49 @@
   </section>
   <!--================ Hero banner start =================-->
 
-  <section style="background-color: #fff;">
+  <section class="section-margin">
     <div class="container">
       <div class="section-intro pb-60px">
         <p>Công thức nổi bật</p>
-        <h2>Tìm kiếm <span class="section-intro__style">nhiều nhất</span></h2>
+        <h2>Tìm kiếm
+          <span class="section-intro__style">nhiều nhất</span></h2>
       </div>
-      <!--================ Hero Carousel start =================-->
       <section class="section-margin mt-0">
         <div class="owl-carousel owl-theme hero-carousel">
-          {{#each hottopic}}
+          {{#each topnew}}
             <div class="hero-carousel__slide">
 
-
-              <img src="/img/home/recipe.jpg" alt="" class="img-recipe" />
-              <div class="hero-carousel__slideOverlay">
+              <img src={{imagepath}} alt="" class="img-recipe" />
+              <div class="content_recipe">
                 <p class="name_topic">{{nametopic}}</p>
 
                 <div class="like_and_view">
                   <div class="like">
                     <div class="icon_like"><i class="fas fa-heart"></i></div>
-                    <p class="like_count">1000</p>
+                    <p class="like_count">{{rating}}</p>
                   </div>
                   <div class="view">
                     <div class="icon_view"><i class="fas fa-eye"></i></div>
-                    <p class="view_count">1000</p>
+                    <p class="view_count">{{view}}</p>
                   </div>
                 </div>
-                <div class="name_dish">Gà nướng muối ớt</div>
+                <div class="name_dish">{{namecourse}}</div>
                 <div class="box_info">
-                  <div class="price">1000 vnđ</div>
-                  <a href="/category/bytopic/{{categoryid}}/{{id}}">
+                  <div class="price">{{price}}.000 vnđ</div>
+                  <a href="/courses/{{id}}">
                     <p>Chi tiết</p>
                     <div class="icon_more"><i
                         class="fas fa-angle-right"
                       ></i></div>
                   </a>
                 </div>
+
               </div>
+
             </div>
           {{/each}}
         </div>
       </section>
-      <!--================ Hero Carousel end =================-->
     </div>
   </section>
 
@@ -108,76 +108,43 @@
         <h2>Công thức đang
           <span class="section-intro__style">khuyến mãi</span></h2>
       </div>
-      {{!-- <div class="row">
-          {{#each hotCourse}}
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card text-center card-product">
-              <div class="card-product__img">
-                <img class="card-img" src="{{thumbnailpath}}" alt="">
-                <ul class="card-product__imgOverlay">
-                  <li><button onclick="location.href='/courses/{{id}}'"><i class="ti-search"></i></button></li>
-                  <li><button class="add-to-cart" data-id="{{id}}"><i class="ti-shopping-cart"></i></button></li>
-                  <li><button class="add-to-favorite" data-id="{{id}}"><i class="ti-heart"></i></button></li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <p>{{nametopic}}</p>
-                <h4 class="card-product__title"><a href="/courses/{{id}}">{{namecourse}}</a></h4>
-                <p>{{username}}</p>
-                <p class="card-product__price">${{price}}</p>
-
-                <div class="review_item">
-                  <div class="media">
-
-                    <div class="media-body">
-
-                      {{{createStar rating}}}
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          {{/each}}
-          
-        </div> --}}
       <section class="section-margin mt-0">
         <div class="owl-carousel owl-theme hero-carousel">
-          {{#each hottopic}}
+          {{#each topnew}}
             <div class="hero-carousel__slide">
 
-              <img src="/img/home/recipe.jpg" alt="" class="img-fluid" />
-              <div class="hero-carousel__slideOverlay">
-                <p class="name_topic">{{nametopic}}</p>
+              <img src={{imagepath}} alt="" class="img-recipe" />
 
-                <div class="like_and_view">
-                  <div class="like">
-                    <div class="icon_like"><i class="fas fa-heart"></i></div>
-                    <p class="like_count">1000</p>
-                  </div>
-                  <div class="view">
-                    <div class="icon_view"><i class="fas fa-eye"></i></div>
-                    <p class="view_count">1000</p>
-                  </div>
+              <p class="name_topic">{{nametopic}}</p>
+
+              <div class="like_and_view">
+                <div class="like">
+                  <div class="icon_like"><i class="fas fa-heart"></i></div>
+                  <p class="like_count">{{rating}}</p>
                 </div>
-                <div class="name_dish">Gà nướng muối ớt</div>
-                <div class="box_info">
-                  <div class="price">1000 vnđ</div>
-                  <a href="/category/bytopic/{{categoryid}}/{{id}}">
-                    <p>Chi tiết</p>
-                    <div class="icon_more"><i
-                        class="fas fa-angle-right"
-                      ></i></div>
-                  </a>
+                <div class="view">
+                  <div class="icon_view"><i class="fas fa-eye"></i></div>
+                  <p class="view_count">{{view}}</p>
                 </div>
               </div>
+              <div class="name_dish">{{namecourse}}</div>
+              <div class="box_info">
+                <div class="price">{{price}}.000 vnđ</div>
+                <a href="/category/bytopic/{{categoryid}}/{{id}}">
+                  <p>Chi tiết</p>
+                  <div class="icon_more"><i
+                      class="fas fa-angle-right"
+                    ></i></div>
+                </a>
+              </div>
+
             </div>
           {{/each}}
         </div>
       </section>
     </div>
   </section>
+
   <!-- ================ trending product section end ================= -->
 
   {{! <!-- ================ offer section start ================= -->

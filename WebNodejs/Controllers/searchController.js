@@ -1,26 +1,22 @@
 let db = require("../db.js");
-const router = require('../routes/search.route');
+const router = require("../routes/search.route");
 let controller = {};
 // const pgp = require("pg-promise");
 
-
 controller.datasearch = (query, order) => {
   return new Promise((resolve, reject) => {
-    if (order === undefined || order === 'Default') {
+    if (order === undefined || order === "Default") {
       var query_string = `SELECT * FROM "Courses" as cour WHERE cour.lock != 1 AND cour.id in 
     (SELECT idcourse 
      FROM "Searchers"
      WHERE document_vectors @@ to_tsquery('${query}'))`;
-    }
-    else if(order === 'rating')
-    {
+    } else if (order === "rating") {
       var query_string = `SELECT * FROM "Courses" as cour WHERE cour.lock != 1 AND cour.id in 
       (SELECT idcourse 
        FROM "Searchers"
        WHERE document_vectors @@ to_tsquery('${query}'))
        ORDER BY cour.rating DESC `;
-    }
-    else {
+    } else {
       var query_string = `SELECT * FROM "Courses" as cour WHERE cour.lock != 1 AND cour.id in 
       (SELECT idcourse 
        FROM "Searchers"
@@ -32,6 +28,5 @@ controller.datasearch = (query, order) => {
       .catch((error) => console.log(error));
   });
 };
-
 
 module.exports = controller;

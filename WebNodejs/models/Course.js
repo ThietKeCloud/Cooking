@@ -20,7 +20,7 @@ const Course = db.define("Course", {
     teacherid: sequelize.INTEGER,
     outlineid: sequelize.INTEGER, //id đề cương
     finish : sequelize.INTEGER,
-    lock: sequelize.INTEGER,
+    lock: sequelize.INTEGER
 
 })
 

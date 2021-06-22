@@ -710,44 +710,16 @@ a {
 .hero-carousel__slide {
   position: relative;
   width: 300px;
-  height: 400px;
 }
 .img-recipe {
   width: 100%;
 }
-.hero-carousel__slide::after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: translateY(50px);
-  opacity: 0;
-  transition: all 0.4s ease;
+
+.content_recipe{
+  background-color: #fff4eb86;
+  padding: 10px;
 }
-.hero-carousel__slideOverlay {
-  position: absolute;
-  width: 100%;
-  height: max-content;
-  background: #ffffffc7;
-  bottom:0px;
-  transform: translateY(50px);
-  opacity: 0;
-  z-index: -1;
-  transition: all 0.4s ease-in-out;
-  padding: 5px 10px;
-}
-.hero-carousel__slide:hover::after {
-  transform: translateY(0);
-  opacity: 1;
-}
-.hero-carousel__slide:hover .hero-carousel__slideOverlay {
-  transform: translateY(0);
-  opacity: 1;
-  z-index: 2;
-}
+
 .card-product {
   border: 0;
   margin-bottom: 30px;
