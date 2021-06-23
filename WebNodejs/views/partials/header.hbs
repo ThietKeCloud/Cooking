@@ -21,16 +21,12 @@
 								Công thức
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="/category/allcategory">Xào</a></li>
-								<div class="dropdown-divider"></div>
-								<li><a class="dropdown-item" href="/category/allcategory">Hấp</a></li>
-								<div class="dropdown-divider"></div>
-								<li><a class="dropdown-item" href="/category/allcategory">Luộc</a></li>
-								<div class="dropdown-divider"></div>
-								<li><a class="dropdown-item" href="/category/allcategory">Nướng</a></li>
-								<div class="dropdown-divider"></div>
-								<li><a class="dropdown-item" href="/category/allcategory">Quay</a></li>
-						
+								{{#each lcCategories}}
+									
+										<li><a class="dropdown-item" href="/category/bycategory/{{id}}">{{namecategory}}</a></li>
+										<div class="dropdown-divider"></div>
+									
+								{{/each}}
 							</ul>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="/contact">Liên hệ</a></li>

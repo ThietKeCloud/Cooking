@@ -4,7 +4,7 @@ const sequelize = require('sequelize')
 
 const Category = db.define("Category", {
     namecategory: sequelize.STRING,
-
+    categoryid: sequelize.INTEGER
 })
 
 

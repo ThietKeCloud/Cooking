@@ -4233,3 +4233,15 @@ a {
 .btn_unlock {
   background-color: #4AA96C;
 }
+
+.btn_buyNow {
+  background-color: #D66100;
+  padding: 10px 40px;
+  border-radius: 999px;
+}
+
+.btn_addToCard {
+  background-color: #D66100;
+  padding: 10px 40px;
+  border-radius: 999px;
+}

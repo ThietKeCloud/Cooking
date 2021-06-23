@@ -16,7 +16,7 @@ controller.datasearch = (query) => {
 
 controller.allcate = (category) => {
     return new Promise((resolve, reject) => {
-        var query_string = `SELECT cate.namecategory , topic.nametopic
+        var query_string = `SELECT cate.namecategory, cate.id, topic.nametopic
         FROM "Categories" AS cate , "Topics" as topic
         WHERE topic.categoryid = cate.id AND cate.namecategory = '${category}' `;
         db.query(query_string)

@@ -58,7 +58,6 @@ router.get('/bytopic/:categoryid/:topicid', async function (req, res) {
     const id = +req.params.topicid;
     const caid = +req.params.categoryid;
     for (const c of res.locals.lcCategories) {
-        console.log(c);
         if (c.id === caid) {
             for (const d of c.level2) {
                 if (d.id === id) {
