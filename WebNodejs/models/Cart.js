@@ -3,7 +3,6 @@ const sequelize = require('sequelize')
 
 //Cart(id,Subtotal,idUser)
 const Cart = db.define("Cart", {
-   
     userid:sequelize.INTEGER,
    subtotal: sequelize.INTEGER
 

@@ -1,7 +1,6 @@
 const db = require('../db')
 const sequelize = require('sequelize');
 
-
 const Searcher = db.define("Searcher", {
     idtopic : sequelize.INTEGER,
     nametopic: sequelize.TEXT,

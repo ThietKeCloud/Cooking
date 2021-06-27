@@ -1,9 +1,6 @@
 const db = require('../db')
 const sequelize = require('sequelize')
-
-
 const Course = db.define("Course", {
-
     namecourse: sequelize.STRING,
     imagepath: sequelize.STRING,
     thumbnailpath: sequelize.STRING,
@@ -21,7 +18,6 @@ const Course = db.define("Course", {
     outlineid: sequelize.INTEGER, //id đề cương
     finish : sequelize.INTEGER,
     lock: sequelize.INTEGER
-
 })
 
 Course.associate = function(models) {

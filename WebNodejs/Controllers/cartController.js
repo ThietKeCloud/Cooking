@@ -37,7 +37,6 @@ module.exports = function Cart(oldCart) {
         this.totalPrice = this.getTotalPrice();
         return this.getCartItem(id);
     };
-
     this.remove = (id) => {
         var storedItem = this.items[id];
         if (storedItem) {
@@ -46,7 +45,6 @@ module.exports = function Cart(oldCart) {
             this.totalPrice = this.getTotalPrice();
         }
     };
-
     this.update = (id, quantity) => {
         var storedItem = this.items[id];
         if (storedItem && quantity >= 1) {

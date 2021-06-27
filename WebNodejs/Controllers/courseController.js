@@ -1,11 +1,6 @@
 let db = require("../db.js");
 let CourseUser = require("../models/CourseUser");
 let controller = {};
-
-// const pgp = require("pg-promise");
-
-
-
 var today = new Date();
 if (today.getDay() == 4){ db.query('update "Topics" as T set counting=(select sum(slhvdg) from public."Courses" as C where C.topicid=T.id)');
 console.log(today);
@@ -13,9 +8,6 @@ console.log(today);
 if(today.getDay() == 4){ db.query('update "Courses" set "Courses".slhvdg=0');
 console.log(today);
 }
-
-
-
 var topnew_query = `select "Courses".*, "Topics".nametopic, "Users".username from ("Courses" join "Topics" on "Courses".topicid ="Topics".id) join "Users"
 on "Courses".teacherid = "Users".id 
 where "Users".role = 1 AND "Courses".lock != 1

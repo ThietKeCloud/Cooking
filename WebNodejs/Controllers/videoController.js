@@ -1,7 +1,5 @@
 let db = require("../db.js");
 let controller = {};
-
-
 controller.queryid = (entity) => {
     return new Promise((resolve, reject) => {
         var query_string = ` select * from public."Viewvideos" where  "Viewvideos".idcourse='${entity}'  ORDER BY "Viewvideos".id`;

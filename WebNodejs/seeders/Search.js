@@ -51,14 +51,14 @@ module.exports = {
             var query_string = `SELECT * FROM "Courses" as cour WHERE cour.lock != 1 AND cour.id in 
           (SELECT idcourse 
            FROM "Searchers"
-           WHERE document_vectors @@ to_tsquery('${query}')) 
+           WHERE document_vectors @@ plainto_tsquery('${query}')) 
            limit '${config.pagination.limituser}' offset '${offset}'`;
         }
         else if (order === 'rating') {
             var query_string = `SELECT * FROM "Courses" as cour WHERE cour.lock != 1 AND cour.id in 
             (SELECT idcourse 
              FROM "Searchers"
-             WHERE document_vectors @@ to_tsquery('${query}'))
+             WHERE document_vectors @@ plainto_tsquery('${query}'))
              ORDER BY cour.rating DESC 
              limit '${config.pagination.limituser}' offset '${offset}'
              `;
@@ -68,7 +68,7 @@ module.exports = {
             var query_string = `SELECT * FROM "Courses" as cour WHERE cour.lock != 1 AND cour.id in 
             (SELECT idcourse 
              FROM "Searchers"
-             WHERE document_vectors @@ to_tsquery('${query}'))
+             WHERE document_vectors @@ plainto_tsquery('${query}'))
              ORDER BY cour.price ASC
              limit '${config.pagination.limituser}' offset '${offset}'
               `;
@@ -83,7 +83,7 @@ module.exports = {
                 SELECT cour.id FROM "Courses" as cour WHERE cour.lock != 1 AND cour.id in 
                 (SELECT idcourse 
                  FROM "Searchers"
-                 WHERE document_vectors @@ to_tsquery('${query}')) 
+                 WHERE document_vectors @@ plainto_tsquery('${query}')) 
              )`);
         
        

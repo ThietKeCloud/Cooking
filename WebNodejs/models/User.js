@@ -12,7 +12,6 @@ const User = db.define("User", {
     lock: sequelize.BOOLEAN,
 
 })
-
 // db.sync()
 // .then(()=>{
 //     console.log("Create User successfully...")
