@@ -10,7 +10,7 @@ let controller = {};
 controller.getFavoriteList = (userid) => {
   return new Promise((resolve, reject) => {
     db.query(
-      `select "Courses".*, "Topics".nametopic, "Users".fullname from ("Courses" join "Topics" on "Courses".topicid ="Topics".id) join "Users"
+      `select DISTINCT "Courses".*, "Topics".nametopic, "Users".fullname from ("Courses" join "Topics" on "Courses".topicid ="Topics".id) join "Users"
         on "Courses".teacherid = "Users".id join "Likes" on "Courses".id = "Likes".courseid
         where "Users".role = 1 and "Likes".userid = ${userid}`
     )
