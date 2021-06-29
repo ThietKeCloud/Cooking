@@ -41,8 +41,10 @@
         <div class="owl-carousel owl-theme hero-carousel">
           {{#each hotCourse}}
             <div class="hero-carousel__slide">
-
+              <a href="/courses/{{id}}">
               <img src={{imagepath}} alt="" class="img-recipe" />
+              </a>
+              
               <div class="content_recipe">
                 <p class="name_topic">{{nametopic}}</p>
 
@@ -56,15 +58,13 @@
                     <p class="view_count">{{view}}</p>
                   </div>
                 </div>
-                <div class="name_dish">{{namecourse}}</div>
+                <a href="/courses/{{id}}">
+                    <div class="name_dish">{{namecourse}}</div>
+                  </a>
+                
                 <div class="box_info">
                   <div class="price">{{price}}.000 vnđ</div>
-                  <a href="/courses/{{id}}">
-                    <p>Chi tiết</p>
-                    <div class="icon_more"><i
-                        class="fas fa-angle-right"
-                      ></i></div>
-                  </a>
+                  
                 </div>
 
               </div>
