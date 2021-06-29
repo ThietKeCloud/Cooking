@@ -3,15 +3,16 @@ const Course = require('../models/Course')
 let db = require("../db.js");
 module.exports = {
   add(entity) {
-    console.log(entity.idcourse);
+    console.log('11111111111');
+    console.log(entity);
     Video.create({ namevideo : entity.namevideo, videopath : entity.videopath , chapter : entity.chapter,
-    description : entity.description , idcourse : entity.idcourse , namecourse : entity.namecourse});
+    description : entity.description[0] , idcourse : entity.idcourse , namecourse : entity.namecourse});
     Course.update({ finish : entity.finish},{where : {namecourse : entity.namecourse}});
     
   },
   update(entity) {
     Video.update({ namevideo : entity.namevideo, videopath : entity.videopath , chapter : entity.chapter,
-      description : entity.description},{where : {namecourse : entity.namecourse}})
+      description : entity.description[0]},{where : {namecourse : entity.namecourse}})
     
   },
   up(){

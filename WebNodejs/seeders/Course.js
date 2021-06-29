@@ -60,7 +60,7 @@ const TBL_CourseS = 'Course';
 module.exports = {
     add(entity) {
         Course.create({
-            namecourse: entity.namecourse, sumary: entity.summary, description: entity.description,
+            namecourse: entity.namecourse, sumary: entity.summary, description: entity.description[0],
             price: entity.price, sale: entity.sale, imagepath: entity.imagepath, thumbnailpath: entity.thumbnailpath, teacherid: entity.teacherid
             , topicid: entity.topicid, finish: entity.finish, view: entity.view, rating: entity.rating, lock : entity.lock
         });
