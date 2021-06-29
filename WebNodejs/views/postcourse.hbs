@@ -152,11 +152,10 @@
                                         <label for="inputGroupSelect01">Loại công thức</label>
                                         <br>
                                         <select id="topicid" name="topicid">
-                                            <option value="1" selected>Xào</option>
-                                            <option value="2">Hấp</option>
-                                            <option value="3">Luộc</option>
-                                            <option value="4">Nướng</option>
-                                            <option value="5">Quay</option>
+                                            {{#each lcCategories}}
+                                            <option value={{id}}>{{namecategory}}</option>
+                                            
+                                            {{/each}}
                                         </select>
                                     </div>
                                 </div>
@@ -191,7 +190,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="col-md-12 form-group">
-                        <button type="submit" value="submit" class="button button-primary float-right">Lưu</button>
+                        <button type="submit" value="submit"  class="button button-primary float-right">Lưu</button>
                     </div>
                 </div>
             </div>

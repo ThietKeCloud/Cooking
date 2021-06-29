@@ -5,11 +5,10 @@ var multer = require('multer');
 const courseModel = require('../seeders/Course');
 const videoModel = require('../seeders/Video');
 router.get('/:id', (req, res) => {
-    if(req.session.teacher)
-    {
+    if(req.session.teacher) {
         res.render('postcourse',{banner: 'Upload Course'});
     }
-    else{
+    else {
         res.render('erorr/404');
     }
 });
@@ -26,13 +25,14 @@ router.post('/:id', (req, res) => {
     var upload = multer({
         storage: storage
     });
-    var Fields = [ { name : 'thumbnail' , maxCount : 1},
-        { name: 'input-image', maxCount: 1 }, {
-        name: 'input-video', maxCount: 1
-    }]
+    var Fields = [ 
+        { name : 'thumbnail' , maxCount : 1 },
+        { name: 'input-image', maxCount: 1 }, 
+        { name: 'input-video', maxCount: 1 }
+    ]
     upload.any(Fields)(req, res, async function (err) {
-        try
-        {if (err instanceof multer.MulterError) {
+        try {
+            if (err instanceof multer.MulterError) {
             return console.log("Multer Error : " + err);
         }
         else if (err) {
