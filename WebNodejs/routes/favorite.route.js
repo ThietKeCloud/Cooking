@@ -7,8 +7,8 @@ router.get('/',(req,res,next)=>{
     favorite = require('../Controllers/favariteController');
     
     favorite.getFavoriteList( req.session.user.id).then(favorite=>{
-        // console.log(favorite[0]);
-        res.render('Favorite',{banner:'List favorite courses', favorite : favorite[0], check : favorite[0].length === 0 })
+        //console.log(favorite[0], favorite[0].length);
+        res.render('Favorite',{banner:'Danh sách công thức yêu thích', favorite : favorite[0], check : favorite[0].length === 0 , totalFav: favorite[0].length})
     })
 
 });
@@ -36,7 +36,7 @@ router.delete('/',(req,res)=>{
     var courseId = req.body.id;
     console.log(courseId);
     Like.destroy({
-        where: {courseid: courseId, userid: req.session.user.id}
+        where: {courseid: courseId, userid: req.session.user.id, totalFav: favorite[0].length}
     })
 }); 
 

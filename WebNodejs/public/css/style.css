@@ -4149,6 +4149,10 @@ a {
   font-size: 24px;
   color: #202020;
   font-weight: 400;
+  transition: 0.2s;
+}
+.name_dish:hover {
+  color: #D66100;
 }
 
 .box_info {
@@ -4238,10 +4242,20 @@ a {
   background-color: #D66100;
   padding: 10px 40px;
   border-radius: 999px;
+  color: #fff;
+  transition: 0.2s;
+}
+.btn_buyNow:hover {
+  background-color: #c45a03;
+  color: #fff;
 }
 
 .btn_addToCard {
   background-color: #D66100;
   padding: 10px 40px;
   border-radius: 999px;
+  transition: 0.2s;
+}
+.btn_addToCard:hover {
+  background-color: #D66100;
 }

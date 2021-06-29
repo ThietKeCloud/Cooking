@@ -8,7 +8,7 @@ router.get('/',(req,res,next)=>{
    const cart = req.session.cart;
     res.locals.cart = cart.getCart();
   
-   res.render('cart',{banner: 'My Cart'});
+   res.render('cart',{banner: 'Giỏ hàng'});
 
 })
 

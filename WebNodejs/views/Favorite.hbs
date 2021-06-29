@@ -3,6 +3,7 @@
 {{/section}}
 {{>banner}}
 <!-- Start Filter Bar -->
+<div class="container">
 <div class="filter-bar d-flex flex-wrap align-items-center">
   <div style="height: 35px;">
 
@@ -24,11 +25,6 @@
       <div class="card text-center card-product">
         <div class="card-product__img">
           <img class="card-img" src="{{imagepath}}" alt="">
-          <ul class="card-product__imgOverlay">
-            <li><button onclick="location.href='/courses/{{id}}'"><i class="ti-search"></i></button></li>
-            <li><button class="add-to-cart" data-id="{{id}}"><i class="ti-shopping-cart"></i></button></li>
-            <li><button class="remove-to-favorite" data-id="{{id}}"><i class="ti-heart"></i></button></li>
-          </ul>
         </div>
         <div class="card-body">
           <p>{{nametopic}}</p>
@@ -59,6 +55,8 @@
 </div>
 </section>
 <!-- ================ category section end ================= -->
+
+</div>
 
 
 {{#section 'js'}}

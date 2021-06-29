@@ -22,18 +22,18 @@
                 <div class="card shadow w-50 mx-auto">
                     <div class="card-body text-center">
                         <h1 class="card-title">Ooops!</h1>
-                        <h2 class="text-danger">This course still not have some Video</h2>
+                        <h2 class="text-danger">Không có video hướng dẫn nào !!!</h2>
                         <p class="card-text">
-                            Sorry, Please return in the future
+                            Quay lại sau
                         </p>
                         <div>
                             <a class="btn btn-primary" href="/" role="button">
                                 <i class="fa fa-home" aria-hidden="true"></i>
-                                Home
+                                Trang chủ
                             </a>
                             <a class="btn btn-success" href="../contact.hbs" role="button">
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
-                                Contact Support
+                                Liên hệ
                             </a>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                         </video>
                     </div>
                     <div class="col-lg-9 col-md-9 blog_details">
-                        <h3>Description </h3>
+                        <h3>Mô tả </h3>
                         {{{description}}}
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                 <div class="blog_right_sidebar">
                     <div class="btn-group-vertical w-100">
                         {{#each list}}
-                        <div class="alert alert-primary mb-2 mt-2 w-100 text-center"> Chapter : {{chapter}}</div>
+                        <div class="alert alert-primary mb-2 mt-2 w-100 text-center"> Phần: {{chapter}}</div>
                         <a href="/video/{{idcourse}}/{{chapter}}"
                             class="list-group-item list-group-item-action text-center">{{namevideo}}</a>
                         {{/each}}
