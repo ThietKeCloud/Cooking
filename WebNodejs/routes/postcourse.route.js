@@ -57,6 +57,8 @@ router.post('/:id', (req, res) => {
                 rating : 0,
                 lock : 0,
             }
+            console.log("course:");
+            console.log(course);
             await courseModel.add(course);
             await videoModel.add(course);   
             await res.render('postcourse');
