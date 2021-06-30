@@ -2390,6 +2390,7 @@ a {
 }
 .single-search-product {
   padding: 10px 0;
+  width: max-content;
 }
 @media (min-width: 1000px) {
   .single-search-product {

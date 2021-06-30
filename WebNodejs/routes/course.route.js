@@ -11,6 +11,7 @@ router.get("/:id", (req, res, next) => {
   courseController
     .getById(req.params.id)
     .then((course) => {
+      //console.log(course);
       res.locals.course = course;
       
       if (req.params.id) {

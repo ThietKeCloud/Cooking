@@ -20,8 +20,6 @@
                     {{nametopic}}
                   </a>
                   {{/each}}
-
-
                 </div>
               </form>
             </li>
@@ -153,110 +151,21 @@
       <p>Các công thức nổi tiếng</p>
       <h2>Công thức <span class="section-intro__style">nổi bật</span></h2>
     </div>
-    <div class="row mt-30">
-      <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
-        <div class="single-search-product-wrapper">
+    <div class="row">
+      
+          {{#each this.course}}
+          <div class="col-4">
           <div class="single-search-product d-flex">
-            <a href="#"><img src="img/product/product-sm-1.png" alt=""></a>
+            <a href="/courses/{{id}}"><img src={{imagepath}} alt=""></a>
             <div class="desc">
-              <a href="#" class="title">Canh nhân sâm</a>
-              <div class="price">$170.00</div>
+              <a href="/courses/{{id}}" class="title">{{namecourse}}</a>
+              <div class="price">Giá: {{price}}.000 VNĐ</div>
             </div>
           </div>
-          <div class="single-search-product d-flex">
-            <a href="#"><img src="img/product/product-sm-2.png" alt=""></a>
-            <div class="desc">
-              <a href="#" class="title">Canh nhân sâm</a>
-              <div class="price">$170.00</div>
-            </div>
           </div>
-          <div class="single-search-product d-flex">
-            <a href="#"><img src="img/product/product-sm-3.png" alt=""></a>
-            <div class="desc">
-              <a href="#" class="title">Canh nhân sâm</a>
-              <div class="price">$170.00</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
-        <div class="single-search-product-wrapper">
-          <div class="single-search-product d-flex">
-            <a href="#"><img src="img/product/product-sm-4.png" alt=""></a>
-            <div class="desc">
-              <a href="#" class="title">Canh nhân sâm</a>
-              <div class="price">$170.00</div>
-            </div>
-          </div>
-          <div class="single-search-product d-flex">
-            <a href="#"><img src="img/product/product-sm-5.png" alt=""></a>
-            <div class="desc">
-              <a href="#" class="title">Canh nhân sâm</a>
-              <div class="price">$170.00</div>
-            </div>
-          </div>
-          <div class="single-search-product d-flex">
-            <a href="#"><img src="img/product/product-sm-6.png" alt=""></a>
-            <div class="desc">
-              <a href="#" class="title">Canh nhân sâm</a>
-              <div class="price">$170.00</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
-        <div class="single-search-product-wrapper">
-          <div class="single-search-product d-flex">
-            <a href="#"><img src="img/product/product-sm-7.png" alt=""></a>
-            <div class="desc">
-              <a href="#" class="title">Canh nhân sâm</a>
-              <div class="price">$170.00</div>
-            </div>
-          </div>
-          <div class="single-search-product d-flex">
-            <a href="#"><img src="img/product/product-sm-8.png" alt=""></a>
-            <div class="desc">
-              <a href="#" class="title">Canh nhân sâm</a>
-              <div class="price">$170.00</div>
-            </div>
-          </div>
-          <div class="single-search-product d-flex">
-            <a href="#"><img src="img/product/product-sm-9.png" alt=""></a>
-            <div class="desc">
-              <a href="#" class="title">Canh nhân sâm</a>
-              <div class="price">$170.00</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
-        <div class="single-search-product-wrapper">
-          <div class="single-search-product d-flex">
-            <a href="#"><img src="img/product/product-sm-1.png" alt=""></a>
-            <div class="desc">
-              <a href="#" class="title">Canh nhân sâm</a>
-              <div class="price">$170.00</div>
-            </div>
-          </div>
-          <div class="single-search-product d-flex">
-            <a href="#"><img src="img/product/product-sm-2.png" alt=""></a>
-            <div class="desc">
-              <a href="#" class="title">Canh nhân sâm</a>
-              <div class="price">$170.00</div>
-            </div>
-          </div>
-          <div class="single-search-product d-flex">
-            <a href="#"><img src="img/product/product-sm-3.png" alt=""></a>
-            <div class="desc">
-              <a href="#" class="title">Canh nhân sâm</a>
-              <div class="price">$170.00</div>
-            </div>
-          </div>
-        </div>
-      </div>
+          {{/each}}
+        
+      
     </div>
   </div>
 </section>
