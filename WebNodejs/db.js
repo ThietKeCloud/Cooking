@@ -6,7 +6,7 @@ dotenv.config();
 const db = new sequelize({
     database: "Cooking",
     username: "postgres",
-    password: process.env.password,
+    password: 'vuivelavang',
     host: "localhost",
     port: 5432,
     dialect: "postgres",

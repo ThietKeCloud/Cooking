@@ -10,7 +10,7 @@ let controller = {};
 controller.getFavoriteList = (userid) => {
   return new Promise((resolve, reject) => {
     db.query(
-      `select DISTINCT "Courses".*, "Topics".nametopic, "Users".fullname from ("Courses" join "Topics" on "Courses".topicid ="Topics".id) join "Users"
+      `select distinct "Courses".*, "Topics".nametopic, "Users".fullname from ("Courses" join "Topics" on "Courses".topicid ="Topics".id) join "Users"
         on "Courses".teacherid = "Users".id join "Likes" on "Courses".id = "Likes".courseid
         where "Users".role = 1 and "Likes".userid = ${userid}`
     )
@@ -22,9 +22,10 @@ controller.getFavoriteList = (userid) => {
 
 controller.getCoures = (id) => {
   return new Promise((resolve, reject) => {
-    favorite
-      .findOne({
-        where: { courseid: id },
+    favorite.findOne({
+        where: 
+        { courseid: id
+        }
       })
       .then((data) => resolve(data))
       .catch((error) => log(error));
