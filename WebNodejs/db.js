@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const db = new sequelize({
-    database: "Cook",
+    database: "Cooking",
     username: "postgres",
     password: process.env.password,
     host: "localhost",
