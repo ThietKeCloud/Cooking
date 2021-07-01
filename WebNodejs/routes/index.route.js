@@ -7,13 +7,13 @@ router.get('/', (req, res) => {
     let courseController = require('../Controllers/courseController');
     courseController.Topnew()
         .then(function (topnew) {
-            console.log(topnew);
+
             controller.mostview().then(function (mostview) {
                 courseController.HotCourses()
                     .then(hotcourse => {
                         courseController.Hottopic()
                             .then(hottopic => {
-                            
+                                //console.log(topnew);
                                 video.up();
                                 res.render('index', {
                                         topnew: topnew[0],

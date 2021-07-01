@@ -20,11 +20,11 @@ controller.getFavoriteList = (userid) => {
 };
 
 
-controller.getCoures = (id) => {
+controller.getCoures = (courseid) => {
   return new Promise((resolve, reject) => {
     favorite
       .findOne({
-        where: { courseid: id },
+        where: { courseid: courseid },
       })
       .then((data) => resolve(data))
       .catch((error) => log(error));
