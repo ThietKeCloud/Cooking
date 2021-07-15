@@ -19,17 +19,7 @@ router.post('/',(req,res,next)=>{
         var courseId = req.body.id; 
         var userid = req.session.user.id;
         var favorite = require('../Controllers/favariteController');
-        favorite.getCoures(courseId).then(data=>{
-<<<<<<< HEAD
-           // console.log(data);
-=======
-            console.log(data[0]);
-            if(data[0]===null || data[0] === undefined)
-            {
-                Like.create({userid: userid, courseid: courseId});
-            }
->>>>>>> 67c84598a403f039230dc2a3b589ed3a5c07e96d
-           
+        favorite.getCoures(courseId).then(data=>{      
            Like.create({courseid: courseId, userid: userid});
         })
         
